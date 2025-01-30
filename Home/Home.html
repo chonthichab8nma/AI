@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan Your Trip</title>
+    <title>Transparent Rectangle with Form</title>
     <link rel="stylesheet" href="styleHome.css">
 </head>
+
 <body>
-    <!-- ส่วนของแบนเนอร์ -->
-    <div class="banner">
-        <img src="/banner.jpg" alt="Banner">
-        <div class="tabs">
-            <button class="tab active">plan your trip</button>
-            <button class="tab">place detail</button>
-        </div>
+    <div class="banner"></div>
+    <div class="horizontal-box">
+        <span class="box-text">Plan your perfect trip!</span>
     </div>
 
-    <!-- ส่วนเนื้อหาหลัก -->
-    <div class="container">
-        <h1>Plan your perfect trip!</h1>
 
-        <div class="trip-box">
-            <h2>Plan you trip</h2>
+    <div class="rectangle">
+        <div>Plan Your Trip</div>
 
+        <!-- Form Container -->
+        <div class="form-container">
             <label for="province">จังหวัด:</label>
-            <select id="province">
-                <option value="" disabled selected>เลือกจังหวัด</option>
-                <option value="bangkok">กรุงเทพฯ</option>
+            <select id="province" name="province">
+                <option value="bangkok">กรุงเทพมหานคร</option>
                 <option value="chiangmai">เชียงใหม่</option>
                 <option value="phuket">ภูเก็ต</option>
+                <option value="krabi">กระบี่</option>
+                <option value="chiangrai">เชียงราย</option>
             </select>
-
+        </div>
+        <div class="form-container">
             <label for="days">เที่ยวกี่วัน?</label>
-            <select id="days">
-                <option value="" disabled selected>เลือกจำนวนวัน</option>
+            <select id="days" name="days">
                 <option value="1">1 วัน</option>
                 <option value="2">2 วัน</option>
                 <option value="3">3 วัน</option>
+                <option value="4">4 วัน</option>
+                <option value="5">5 วัน</option>
             </select>
-
-            <button class="next-btn">NEXT</button>
+        </div>
+        <div class="next-button-container">
+            <button class="next-button">NEXT</button>
         </div>
     </div>
+
 </body>
+
 </html>

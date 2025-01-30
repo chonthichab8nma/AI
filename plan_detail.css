@@ -1,0 +1,70 @@
+/* รีเซ็ตค่าเริ่มต้นของ HTML */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* แบนเนอร์ด้านบน */
+.banner {
+    width: 100%;
+    height: 120px;
+    /* ปรับความสูงได้ */
+    background-image: url('images/banner_plan_detail.jpg');
+    /* เปลี่ยนเป็น URL ของรูปภาพแบนเนอร์ */
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* กำหนดลักษณะของ Navbar */
+.navbar {
+    position: absolute;
+    top: 70px;
+    /* เลื่อน navbar ลงจากด้านบนแบนเนอร์ */
+    right: 20px;
+    /* วางตำแหน่งให้ห่างจากด้านขวาของแบนเนอร์ */
+    display: flex;
+    gap: 10px;
+    /* ระยะห่างระหว่างปุ่ม */
+}
+
+
+/* กำหนดสไตล์ของปุ่มใน Navbar */
+.navbar-button {
+    padding: 10px 20px;
+    background-color: #B3D9EC;
+    border: 2px solid #000000;
+    /* กรอบของปุ่ม */
+    border-radius: 5px;
+    /* มุมของกรอบ */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* เปลี่ยนสีของปุ่มเมื่อ hover */
+.navbar-button:hover {
+    background-color: #f1f1f1;
+}
+
+/* เนื้อหาหลักที่อยู่ใต้แบนเนอร์ */
+.main-content {
+    background-image: url('images/background.jpg');
+    background-size: 90%;
+    background-position: center 10%;
+    background-attachment: fixed;
+    margin-top: 110px;
+    min-height: 1000vh;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}

@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   placeDetailButton.addEventListener("click", (e) => {
     e.preventDefault();
-    tripContent.innerHTML = "<h3>สถานที่ท่องเที่ยวที่น่าสนใจ</h3><ul><li>เขาหลัก</li><li>น้ำตกสายรุ้ง</li><li>วัดสวรรค์คูหา</li><li>จุดชมวิวเสม็ดนางชี</li></ul>";
+    window.location.href = "plan_detail.html";
   });
 
   // เริ่มต้นแสดงเนื้อหาทริปเมื่อหน้าโหลด

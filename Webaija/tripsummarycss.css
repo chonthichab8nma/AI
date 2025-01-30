@@ -7,8 +7,9 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background: url('background.jpg') no-repeat center center fixed; /* ใช้ background สำหรับ body */
+  background: url('background.jpg') no-repeat center top; /* ปรับตำแหน่งภาพพื้นหลังให้เลื่อนลง */
   background-size: cover; /* ทำให้ภาพพื้นหลังครอบคลุมหน้าจอ */
+  background-attachment: scroll; /* ให้ภาพพื้นหลังเลื่อนตามการเลื่อนหน้าจอ */
   color: #333;
 }
 

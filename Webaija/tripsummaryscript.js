@@ -1,99 +1,71 @@
- // ดึงข้อมูลจาก URL (query parameters)
- const urlParams = new URLSearchParams(window.location.search);
- const province = urlParams.get('province');  // จังหวัด
- const days = urlParams.get('days');          // จำนวนวัน
+document.addEventListener("DOMContentLoaded", () => {
+  const tripContent = document.getElementById("tripContent");
+  const planTripButton = document.getElementById("planTripButton");
+  const placeDetailButton = document.getElementById("placeDetailButton");
 
- // แสดงข้อมูลจังหวัดและวันในหัวข้อ
- const tripTitle = document.getElementById("tripTitle");
- tripTitle.textContent = `${province} ${days} วัน`;
+  // ดึงข้อมูลจาก URL (query parameters)
+  const urlParams = new URLSearchParams(window.location.search);
+  const province = urlParams.get('province') || "จังหวัดไม่ระบุ";  // จังหวัด
+  const days = parseInt(urlParams.get('days')) || 0;               // จำนวนวัน
 
- // ข้อมูลรายละเอียดทริป
- const tripDetails = {
-   "Phang Nga": {
-     1: [
-       { day: "วันที่ 1", events: [
-         "**เกาะสุรินทร์** (ต้องจองทัวร์ล่วงหน้า)",
-         "* 06:00 น. ออกเดินทางจากภูเก็ตไปยังท่าเรือเพื่อไปเกาะสุรินทร์",
-         "* 08:00 น. - 16:00 น. ดำน้ำดูปะการัง เที่ยวชมเกาะสุรินทร์",
-         "* 17:00 น. เดินทางกลับภูเก็ต"
-       ]}
-     ],
-     2: [
-       { day: "วันที่ 1", events: [
-         "13:00 น. เดินทางถึงสนามบินภูเก็ต (HKT) รับรองและเดินทางไปเขาหลัก (1.5-2 ชั่วโมง)",
-         "15:00 น. เช็คอินพักที่เขาหลัก",
-         "16:00 น. เที่ยวชมชายหาดเขาหลัก พักผ่อนริมทะเล",
-         "19:00 น. รับประทานอาหารเย็นที่ร้านอาหารทะเลในเขาหลัก"
-       ]},
-       { day: "วันที่ 2", events: [
-         "08:00 น. รับประทานอาหารเช้าที่โรงแรม",
-         "09.00 น. เดินทางไปยังน้ำตกสายรุ้ง เที่ยวชมน้ำตกและธรรมชาติ (ประมาณ 1 ชั่วโมง)",
-         "12:00 น. รับประทานอาหารกลางวันที่ร้านอาหารใกล้เคียง"
-       ]}
-     ],
-     3: [
-       { day: "วันที่ 1", events: [
-         "13:00 น. เดินทางถึงสนามบินภูเก็ต (HKT) รับรองและเดินทางไปเขาหลัก (1.5-2 ชั่วโมง)",
-         "15:00 น. เช็คอินพักที่เขาหลัก",
-         "16:00 น. เที่ยวชมชายหาดเขาหลัก พักผ่อนริมทะเล",
-         "19:00 น. รับประทานอาหารเย็นที่ร้านอาหารทะเลในเขาหลัก"
-       ]},
-       { day: "วันที่ 2", events: [
-         "08:00 น. รับประทานอาหารเช้าที่โรงแรม",
-         "09.00 น. เดินทางไปยังน้ำตกสายรุ้ง เที่ยวชมน้ำตกและธรรมชาติ (ประมาณ 1 ชั่วโมง)",
-         "12:00 น. รับประทานอาหารกลางวันที่ร้านอาหารใกล้เคียง"
-       ]},
-       { day: "วันที่ 3", events: [
-         "08:00 น. รับประทานอาหารเช้าที่โรงแรม",
-         "09.00 น. เช็คเอ้าท์จากโรงแรม",
-         "10:00 น. เดินทางไปยังจุดชมวิวเสม็ดนางชี ชมวิวทะเลและอ่าวพังงา (ประมาณ 1 ชั่วโมง)",
-         "11:30 น. เดินทางไปสนามบินภูเก็ต เพื่อเดินทางกลับ"
-       ]}
-     ]
-   }
- };
+  // อัปเดตหัวข้อทริป
+  const tripTitle = document.getElementById("tripTitle");
+  tripTitle.textContent = `${province} ${days} วัน`;
 
- // ฟังก์ชันแสดงรายละเอียดทริป
- const displayTripDetails = () => {
-   const tripContent = document.getElementById("tripContent");
-   tripContent.innerHTML = ""; // ล้างเนื้อหาก่อน
+  // ข้อมูลรายละเอียดทริป
+  const tripDetails = {
+    "Phang Nga": {
+      1: [
+        { day: "วันที่ 1", events: ["**เกาะสุรินทร์** (ต้องจองทัวร์ล่วงหน้า)", "06:00 น. ออกเดินทางจากภูเก็ตไปยังท่าเรือเพื่อไปเกาะสุรินทร์", "08:00 น. - 16:00 น. ดำน้ำดูปะการัง เที่ยวชมเกาะสุรินทร์", "17:00 น. เดินทางกลับภูเก็ต"] }
+      ],
+      2: [
+        { day: "วันที่ 1", events: ["13:00 น. เดินทางถึงสนามบินภูเก็ต (HKT)", "15:00 น. เช็คอินพักที่เขาหลัก", "16:00 น. เที่ยวชมชายหาดเขาหลัก"] },
+        { day: "วันที่ 2", events: ["08:00 น. รับประทานอาหารเช้าที่โรงแรม", "09:00 น. เดินทางไปยังน้ำตกสายรุ้ง", "12:00 น. รับประทานอาหารกลางวันที่ร้านอาหารใกล้เคียง"] }
+      ],
+      3: [
+        { day: "วันที่ 1", events: ["เดินทางถึงภูเก็ตและเที่ยวเขาหลัก"] },
+        { day: "วันที่ 2", events: ["น้ำตกสายรุ้งและกิจกรรมชายหาด"] },
+        { day: "วันที่ 3", events: ["ชมวิวเสม็ดนางชีและเดินทางกลับ"] }
+      ]
+    }
+  };
 
-   const selectedProvinceDetails = tripDetails[province];
-   const selectedDaysDetails = selectedProvinceDetails ? selectedProvinceDetails[days] : null;
+  // ฟังก์ชันแสดงรายละเอียดทริป
+  const displayTripDetails = () => {
+    tripContent.innerHTML = ""; // ล้างเนื้อหาก่อน
+    if (tripDetails[province] && tripDetails[province][days]) {
+      tripDetails[province][days].forEach(dayDetail => {
+        const dayContainer = document.createElement("div");
+        dayContainer.classList.add("day");
 
-   if (selectedDaysDetails) {
-     selectedDaysDetails.forEach(dayDetail => {
-       const dayContainer = document.createElement("div");
-       dayContainer.classList.add("day");
+        const dayTitle = document.createElement("h3");
+        dayTitle.textContent = dayDetail.day;
+        dayContainer.appendChild(dayTitle);
 
-       const dayTitle = document.createElement("h3");
-       dayTitle.textContent = dayDetail.day;
-       dayContainer.appendChild(dayTitle);
+        const eventList = document.createElement("ul");
+        dayDetail.events.forEach(event => {
+          const listItem = document.createElement("li");
+          listItem.textContent = event;
+          eventList.appendChild(listItem);
+        });
 
-       const eventList = document.createElement("ul");
-       dayDetail.events.forEach(event => {
-         const listItem = document.createElement("li");
-         listItem.textContent = event;
-         eventList.appendChild(listItem);
-       });
-
-       dayContainer.appendChild(eventList);
-       tripContent.appendChild(dayContainer);
-     });
-   } else {
-     tripContent.innerHTML = "ข้อมูลทริปไม่พบสำหรับจังหวัดหรือจำนวนวันที่เลือก.";
-   }
- };
+        dayContainer.appendChild(eventList);
+        tripContent.appendChild(dayContainer);
+      });
+    } else {
+      tripContent.textContent = "ไม่มีข้อมูลสำหรับจังหวัดหรือจำนวนวันที่เลือก";
+    }
+  };
 
   // ตั้งค่าให้ปุ่มทำงาน
   planTripButton.addEventListener("click", (e) => {
-    e.preventDefault(); // ป้องกันการไปหน้าอื่น
-    displayTripDetails(); // แสดงรายละเอียดทริป
+    e.preventDefault();
+    window.location.href = "Home.html"; // เปลี่ยนไปยังหน้า Home.html
   });
 
   placeDetailButton.addEventListener("click", (e) => {
-    e.preventDefault(); // ป้องกันการไปหน้าอื่น
-    displayPlaceDetail(); // แสดงรายละเอียดสถานที่
+    e.preventDefault();
+    tripContent.innerHTML = "<h3>สถานที่ท่องเที่ยวที่น่าสนใจ</h3><ul><li>เขาหลัก</li><li>น้ำตกสายรุ้ง</li><li>วัดสวรรค์คูหา</li><li>จุดชมวิวเสม็ดนางชี</li></ul>";
   });
 
   // เริ่มต้นแสดงเนื้อหาทริปเมื่อหน้าโหลด

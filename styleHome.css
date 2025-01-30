@@ -1,0 +1,101 @@
+/* ตั้งค่าพื้นฐานของหน้าเว็บ */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('/BG.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* ส่วนของแบนเนอร์ */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 120px; /* ปรับขนาดให้ใกล้เคียงกับรูปตัวอย่าง */
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* เมนูแท็บด้านบน */
+.tabs {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+}
+
+.tab {
+    background: #e0a3b6;
+    border: none;
+    padding: 8px 12px;
+    margin-right: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: #c87b8a;
+}
+
+/* กล่องเนื้อหาหลัก */
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* หัวข้อหลัก */
+h1 {
+    font-size: 36px;
+    background: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+/* กล่องสำหรับวางฟอร์ม */
+.trip-box {
+    background: rgba(255, 255, 255, 0.9);
+    width: 320px;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    text-align: left;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* สไตล์ของตัวเลือก */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* ปุ่ม NEXT */
+.next-btn {
+    width: 100%;
+    padding: 12px;
+    background: black;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

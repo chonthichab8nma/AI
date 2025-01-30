@@ -33,7 +33,7 @@ body {
 .menu {
   position: absolute;
   right: 20px;
-  bottom: 20px;
+  bottom: 0px;
   display: flex;
   gap: 10px;
   z-index: 10; /* ปุ่มอยู่หน้าสุด */
@@ -45,11 +45,22 @@ button {
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  border-radius: 8px;
+  border-top-left-radius: 15px;  /* ขอบมนที่มุมบนซ้าย */
+  border-top-right-radius: 15px; /* ขอบมนที่มุมบนขวา */
+  border-bottom-left-radius: 0px; /* มุมล่างซ้ายเป็นเหลี่ยม */
+  border-bottom-right-radius: 0px; /* มุมล่างขวาเป็นเหลี่ยม */
+  position: relative;
+  transition: transform 0.2s ease-in-out, z-index 0s 0.2s; /* การเคลื่อนไหวเมื่อคลิก และเปลี่ยน z-index หลังจากเด้ง */
+  z-index: 1; /* ปุ่มเริ่มต้นอยู่ด้านล่าง */
 }
 
 button:hover {
   background-color: #79AFC7;
+}
+
+button:active {
+  transform: translateY(-5px); /* เด้งขึ้นเมื่อคลิก */
+  z-index: 2; /* เปลี่ยนให้ปุ่มที่คลิกอยู่ด้านหน้า */
 }
 
 /* เนื้อหาทริป */

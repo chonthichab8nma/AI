@@ -9,21 +9,21 @@
 </head>
 
 <body>
-    <!-- แบนเนอร์ด้านบน -->
+    <!-- ส่วนของแบนเนอร์ -->
     <div class="banner">
-        <!-- Navbar -->
-        <div class="navbar">
-            <button class="navbar-button">plan your trip</button>
-            <button class="navbar-button">plan detail</button>
+        <img src="banner_plan_detail.jpg" alt="Banner" class="banner-image">
+        <div class="menu">
+            <button id="planTripButton">Plan Your Trip</button>
+            <button id="placeDetailButton">Place Detail</button>
         </div>
     </div>
 
     <!-- เนื้อหาหลักที่อยู่ใต้แบนเนอร์ -->
     <div class="main-content">
         <!-- Dropdown เลือกจังหวัด -->
-         
         <div class="dropdown">
-            <select class="dropdown-select">
+            <label for="province" class="dropdown-label">จังหวัด:</label>
+            <select id="province" class="dropdown-select">
                 <option value hidden="">ระบุจังหวัด</option>
                 <option value="krabi">กระบี่</option>
                 <option value="nakhonsithammarat">นครศรีธรรมราช</option>
@@ -32,7 +32,9 @@
                 <option value="suratthani">สุราษฎร์ธานี</option>
             </select>
         </div>
+
     </div>
+    <script src="plan_detail.js"></script>
 </body>
 
 </html>

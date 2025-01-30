@@ -12,14 +12,58 @@ body {
 }
 
 .banner {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 120px;
     left: 0;
     top: 0;
     background: url('banner.jpg') no-repeat center center;
     background-size: cover;
-}
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start; /* จัดปุ่มให้อยู่ด้านบน */
+    padding-right: 20px;
+    padding-top: 70px; /* เพิ่มระยะห่างจากด้านบน */
+  }
+  
+  .button {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+  }
+  
+  .plan-your-trip {
+    background-color: #79AFC7;
+  }
+  
+  .place-detail {
+    background-color: #79AFC7;
+  }
+  
+  .button:hover {
+    background-color: #C2E1F0;
+  }
+  
+  .plan-your-trip.active {
+    background-color: #C2E1F0;
+    transform: scale(1.1);
+  }
+  
+  .place-detail.active {
+    background-color: #79AFC7;
+    transform: scale(1);
+  }
+  
+  .banner button:focus {
+    outline: none;
+  }
+  
 .horizontal-box {
     position: absolute;
     width: 800px; /* ความกว้างของกล่อง */
@@ -53,8 +97,7 @@ body {
     /* วางอยู่กลางหน้าจอในแนวตั้ง */
     transform: translateY(-50%);
     /* ย้ายขึ้นลงเพื่อให้ตรงกลาง */
-    background: #FDF4E8;
-    /* สีพื้นหลัง */
+    background: rgba(253, 244, 232, 0.9); 
     border: 2px solid #E6CAA5;
     /* ขอบกล่องสี #E6CAA5 */
     border-radius: 10px;

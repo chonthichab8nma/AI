@@ -9,18 +9,48 @@ body {
     align-items: center;
 }
 
-/* สไตล์ของแถบเมนู */
 .menu {
     position: absolute;
     top: 40px; /* ปรับค่าตามต้องการ */
     right: 0;
     background: none;
     display: flex;
-    gap: 10px; /* เพิ่มระยะห่างระหว่างเมนู */
-    font-size: 20px; /* เพิ่มขนาดตัวอักษร */
-    padding: 15px 30px; /* เพิ่มพื้นที่รอบเมนู */
-    height: 70px; /* ปรับความสูง */
-    width: auto; /* หรือกำหนดค่าตามต้องการ เช่น 300px */
+    gap: 0px; /* ลด gap เพื่อให้ปุ่มติดกัน */
+}
+
+.menu button {
+    font-size: 18px; /* ขนาดตัวอักษร */
+    padding: 15px 25px; /* ขนาดปุ่ม */
+    border: none;
+    background: #ccc; /* สีพื้นหลังปุ่มทั่วไป */
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover, .menu button:hover {
+    background: #bbb; /* สีเข้มขึ้นเมื่อ hover */
+}
+
+/* ปรับปุ่ม Plan Your Trip ให้ใหญ่ขึ้นและสีเข้ม */
+.menu .plan-trip {
+    font-size: 20px; /* ขนาดใหญ่ขึ้น */
+    font-weight: bold;
+    background: #444; /* สีเข้มขึ้น */
+    color: white;
+    padding: 18px 30px; /* เพิ่ม padding */
+}
+
+/* ปรับปุ่ม Place Detail */
+.menu .place-detail {
+    font-size: 18px; /* ขนาดเหมาะสม */
+    background: #666; /* สีพื้นหลังปุ่ม Place Detail */
+    color: white;
+    padding: 18px 30px; /* ขนาดปุ่ม */
+}
+
+.menu .place-detail:hover {
+    background: #555; /* เปลี่ยนสีเมื่อ hover */
 }
 
 

@@ -1,82 +1,77 @@
+/* รีเซ็ตค่าเริ่มต้น */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background: url('background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #333;
-  }
-  
-  .banner {
-    position: relative;
-    height: 178px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .banner-overlay {
-    position: relative;
-    height: 100%;
-    width: 100%;
-  }
-  
-  .banner-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.5;
-  }
-  
-  .menu {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    display: flex;
-    gap: 10px;
-  }
-  
-  button {
-    background-color: #C2E1F0;
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 8px;
-  }
-  
-  button:hover {
-    background-color: #C2E1F0;
-  }
-  
-  .trip-details {
-    padding: 20px;
-    background: #D2E4E3;
-    border-radius: 12px;
-    margin: 20px auto;
-    max-width: 800px;
-  }
-  
-  .day {
-    margin-bottom: 10px;
-  }
-  
-  h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  h2 {
-    font-size: 20px;
-    margin-top: 10px;
-    text-align: center;
-  }
-  
-  h3 {
-    font-size: 20px;
-    margin-top: 10px;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+/* แบนเนอร์ */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ปุ่มในแบนเนอร์ */
+.menu {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 10; /* ปุ่มอยู่หน้าสุด */
+}
+
+button {
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+button:hover {
+  background-color: #005a9e;
+}
+
+/* เนื้อหาทริป */
+.trip-details {
+  padding: 20px;
+  background: #D2E4E3;
+  border-radius: 12px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 20px;
+  margin-top: 10px;
+}

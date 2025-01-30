@@ -85,5 +85,17 @@
    }
  };
 
- // เรียกใช้งานแสดงรายละเอียดทริป
- displayTripDetails();
+  // ตั้งค่าให้ปุ่มทำงาน
+  planTripButton.addEventListener("click", (e) => {
+    e.preventDefault(); // ป้องกันการไปหน้าอื่น
+    displayTripDetails(); // แสดงรายละเอียดทริป
+  });
+
+  placeDetailButton.addEventListener("click", (e) => {
+    e.preventDefault(); // ป้องกันการไปหน้าอื่น
+    displayPlaceDetail(); // แสดงรายละเอียดสถานที่
+  });
+
+  // เริ่มต้นแสดงเนื้อหาทริปเมื่อหน้าโหลด
+  displayTripDetails();
+});

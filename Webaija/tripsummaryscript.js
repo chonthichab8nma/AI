@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const tripContent = document.getElementById("tripContent");
   const planTripButton = document.getElementById("planTripButton");
   const placeDetailButton = document.getElementById("placeDetailButton");
-  
 
   // ข้อมูลรายละเอียดทริปในรูปแบบ array
   const tripDetails = [
@@ -61,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ตั้งค่าให้ปุ่มทำงาน
   planTripButton.addEventListener("click", (e) => {
     e.preventDefault(); // ป้องกันการไปหน้าอื่น
-    displayTripDetails(); // แสดงรายละเอียดทริป
+    window.location.href = "Home.html"; // เปลี่ยนไปยังหน้า Home.html
   });
 
   placeDetailButton.addEventListener("click", (e) => {

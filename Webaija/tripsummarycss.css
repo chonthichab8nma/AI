@@ -40,8 +40,8 @@
   }
   
   button {
-    background-color: #0078d4;
-    color: white;
+    background-color: #C2E1F0;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -49,13 +49,15 @@
   }
   
   button:hover {
-    background-color: #005a9e;
+    background-color: #C2E1F0;
   }
+  
+  
   
   
   .trip-details {
     padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
+    background: #D2E4E3;
     border-radius: 12px;
     margin: 20px auto;
     max-width: 800px;

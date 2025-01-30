@@ -14,7 +14,7 @@ body {
     width: 100%;
     height: 120px;
     /* ปรับความสูงได้ */
-    background-image: url('images/banner_plan_detail.jpg');
+    background-image: url('banner_plan_detail.jpg');
     /* เปลี่ยนเป็น URL ของรูปภาพแบนเนอร์ */
     background-size: cover;
     background-position: center;
@@ -58,7 +58,7 @@ body {
 
 /* เนื้อหาหลักที่อยู่ใต้แบนเนอร์ */
 .main-content {
-    background-image: url('images/background.jpg');
+    background-image: url('background.jpg');
     background-size: 90%;
     background-position: center 10%;
     background-attachment: fixed;

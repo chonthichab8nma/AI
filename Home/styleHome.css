@@ -1,12 +1,14 @@
-body {
-    position: relative;
+* {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    box-sizing: border-box;
+  }
+body {
     /* ให้ครอบคลุมทั้งหน้าจอ */
-    background: url('BG.jpg') no-repeat center center;
+    font-family: 'Arial', sans-serif;
+    background: url('BG.jpg') no-repeat center top;
+    background-attachment: scroll; /* ให้ภาพพื้นหลังเลื่อนตามการเลื่อนหน้าจอ */
     background-size: cover;
-    opacity: 0.8;
 }
 
 .banner {

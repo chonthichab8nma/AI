@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ตั้งค่าให้ปุ่มทำงาน
   planTripButton.addEventListener("click", (e) => {
     e.preventDefault(); // ป้องกันการไปหน้าอื่น
-    displayTripDetails(); // แสดงรายละเอียดทริป
+    window.location.href = "Home.html"; // เปลี่ยนไปยังหน้า Home.html
   });
 
   placeDetailButton.addEventListener("click", (e) => {

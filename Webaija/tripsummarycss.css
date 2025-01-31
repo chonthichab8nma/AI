@@ -57,7 +57,7 @@ button {
 }
 
 button:hover {
-  background-color: #79AFC7;
+  background-color: #38809f;
 }
 
 button:active {
@@ -105,7 +105,8 @@ button:active {
 /* เนื้อหาทริป */
 .trip-details {
   padding: 20px;
-  background: #C2E1F0;
+  background: rgba(253, 244, 232, 0.9);  /* สี FDF4E8 โปร่งแสง 90% */
+  border: 2px solid #E6CAA5;
   border-radius: 12px;
   margin: 20px auto;
   max-width: 800px;

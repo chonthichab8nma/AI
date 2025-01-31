@@ -204,11 +204,12 @@ h3 {
     color: #555;
 }
 
-/* ปรับขนาดรูปภาพให้อยู่ด้านขวา */
 .place-image {
     width: 250px;
     height: 250px;
     object-fit: cover;
-    border-radius: 0 10px 10px 0;
-    /* ทำให้ขอบด้านขวาโค้งมน */
+    border: 2px solid red;
+    /* ช่วยตรวจสอบว่า element ถูกสร้างขึ้นหรือไม่ */
+    background-color: lightgray;
+    /* ถ้าไม่มีรูปจะแสดงพื้นหลังสีเทา */
 }

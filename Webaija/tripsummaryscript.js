@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const province = urlParams.get('province') || "จังหวัดไม่ระบุ";  // จังหวัด
   const days = parseInt(urlParams.get('days')) || 0;               // จำนวนวัน
+  
 
   // อัปเดตหัวข้อทริป
   const tripTitle = document.getElementById("tripTitle");

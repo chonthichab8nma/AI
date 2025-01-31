@@ -84,7 +84,6 @@ body {
   color: #202B64; /* สีตัวหนังสือ */
   font-weight: bold; /* ตัวหนา */
 }
-
 .rectangle {
   position: absolute;
   width: 350px;
@@ -188,4 +187,9 @@ select {
 
 .next-button:hover {
   background-color: #E6CAA5;
+}
+.button.plan-your-trip.active {
+  background-color: #ff9800; /* เปลี่ยนสีปุ่มเมื่อ active */
+  color: white;
+  border: 2px solid #ff9800;
 }

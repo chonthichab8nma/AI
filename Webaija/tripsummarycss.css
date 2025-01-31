@@ -19,7 +19,7 @@ body {
   width: 100%;
   height: 120px;
   overflow: hidden;
-  background: #000; /* กำหนดพื้นหลังสีดำให้แบนเนอร์ */
+  padding: 10px 0;
 }
 
 .banner-image {
@@ -40,6 +40,7 @@ body {
 }
 
 button {
+ 
   background-color: #79AFC7;
   color: rgb(0, 0, 0);
   border: none;
@@ -50,8 +51,9 @@ button {
   border-bottom-left-radius: 0px; /* มุมล่างซ้ายเป็นเหลี่ยม */
   border-bottom-right-radius: 0px; /* มุมล่างขวาเป็นเหลี่ยม */
   position: relative;
-  transition: transform 0.2s ease-in-out, z-index 0s 0.2s; /* การเคลื่อนไหวเมื่อคลิก และเปลี่ยน z-index หลังจากเด้ง */
-  z-index: 1; /* ปุ่มเริ่มต้นอยู่ด้านล่าง */
+  transition: all 0.3s ease-in-out;
+  z-index: 10; /* ปุ่มเริ่มต้นอยู่ด้านล่าง */
+  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1); /* เงาด้านบนให้ดูเป็นแถบ */
 }
 
 button:hover {
@@ -59,9 +61,32 @@ button:hover {
 }
 
 button:active {
-  transform: translateY(-5px); /* เด้งขึ้นเมื่อคลิก */
-  z-index: 2; /* เปลี่ยนให้ปุ่มที่คลิกอยู่ด้านหน้า */
+  
+  z-index: 10; /* เปลี่ยนให้ปุ่มที่คลิกอยู่ด้านหน้า */
   background-color: #A3C4D7; /* สีพื้นหลังที่เปลี่ยนเมื่อคลิก */
+  color: white;
+  border: 2px solid #ff9800;
+  transform: translateY(0); /* ป้องกันการขยับขึ้น */
+  font-weight: bold;
+  height: 65px; /* เพิ่มความสูงของปุ่มที่ถูกเลือก */
+}
+
+.button-container::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 20px; /* เพิ่มความสูงให้กลืนกับพื้นหลัง */
+  background-color: #ffffff; /* สีพื้นหลังเดียวกับปุ่ม */
+  z-index: 5;
+}
+
+.button-container {
+  display: flex;
+  position: relative;
+  justify-content: center; /* จัดให้อยู่กึ่งกลาง */
+  gap: 5px; /* ระยะห่างระหว่างปุ่ม */
 }
 
 /* เมื่อคลิกที่ Plan Your Trip */

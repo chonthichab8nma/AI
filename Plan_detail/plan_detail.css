@@ -37,9 +37,9 @@ body {
 .menu {
     position: absolute;
     right: 20px;
-    bottom: 20px;
+    bottom: 0px;
     display: flex;
-    gap: 10px;
+    gap: -10px;
     z-index: 10;
     /* ปุ่มอยู่หน้าสุด */
 }
@@ -48,22 +48,52 @@ button {
     background-color: #79AFC7;
     color: rgb(0, 0, 0);
     border: none;
-    padding: 10px 20px;
+    padding: 10px 30px;
     cursor: pointer;
-    border-radius: 8px;
+    border-top-left-radius: 15px;
+    /* ขอบมนที่มุมบนซ้าย */
+    border-top-right-radius: 15px;
+    /* ขอบมนที่มุมบนขวา */
+    border-bottom-left-radius: 0px;
+    /* มุมล่างซ้ายเป็นเหลี่ยม */
+    border-bottom-right-radius: 0px;
+    /* มุมล่างขวาเป็นเหลี่ยม */
+    position: relative;
+    transition: transform 0.2s ease-in-out, z-index 0s 0.2s;
+    /* การเคลื่อนไหวเมื่อคลิก และเปลี่ยน z-index หลังจากเด้ง */
+    z-index: 1;
+    /* ปุ่มเริ่มต้นอยู่ด้านล่าง */
 }
 
 button:hover {
     background-color: #79AFC7;
 }
 
-/* เนื้อหาทริป */
-.trip-details {
-    padding: 20px;
-    background: #C2E1F0;
-    border-radius: 12px;
-    margin: 20px auto;
-    max-width: 800px;
+button:active {
+    transform: translateY(-5px);
+    /* เด้งขึ้นเมื่อคลิก */
+    z-index: 2;
+    /* เปลี่ยนให้ปุ่มที่คลิกอยู่ด้านหน้า */
+    background-color: #A3C4D7;
+    /* สีพื้นหลังที่เปลี่ยนเมื่อคลิก */
+}
+
+/* เมื่อคลิกที่ Plan Your Trip */
+#planTripButton.active {
+    z-index: 3;
+    transform: translateY(-10px);
+    /* ขยับขึ้นเมื่อเลือก */
+    background-color: #A3C4D7;
+    /* เปลี่ยนเป็นสีอ่อนเมื่อเลือก */
+}
+
+/* เมื่อคลิกที่ Place Detail */
+#placeDetailButton.active {
+    z-index: 3;
+    transform: translateY(-10px);
+    /* ขยับขึ้นเมื่อเลือก */
+    background-color: #A3C4D7;
+    /* เปลี่ยนเป็นสีอ่อนเมื่อเลือก */
 }
 
 h1 {

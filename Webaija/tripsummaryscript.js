@@ -61,12 +61,25 @@ document.addEventListener("DOMContentLoaded", () => {
   planTripButton.addEventListener("click", (e) => {
     e.preventDefault();
     window.location.href = "Home.html"; // เปลี่ยนไปยังหน้า Home.html
+    
   });
 
   placeDetailButton.addEventListener("click", (e) => {
     e.preventDefault();
     window.location.href = "plan_detail.html";
   });
+
+  //add
+
+  // ทำให้ปุ่ม active เมื่อเข้าหน้านี้
+    planTripButton.classList.add("active");
+
+    // ตั้งค่าให้เปลี่ยน active เมื่อคลิกปุ่มอื่น
+    placeDetailButton.addEventListener("click", () => {
+      planTripButton.classList.remove("active");
+      placeDetailButton.classList.add("active");
+  });
+  
 
   // เริ่มต้นแสดงเนื้อหาทริปเมื่อหน้าโหลด
   displayTripDetails();

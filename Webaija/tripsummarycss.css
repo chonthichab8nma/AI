@@ -52,6 +52,7 @@ button {
   position: relative;
   transition: transform 0.2s ease-in-out, z-index 0s 0.2s; /* การเคลื่อนไหวเมื่อคลิก และเปลี่ยน z-index หลังจากเด้ง */
   z-index: 1; /* ปุ่มเริ่มต้นอยู่ด้านล่าง */
+  
 }
 
 button:hover {
@@ -60,7 +61,7 @@ button:hover {
 
 button:active {
   transform: translateY(-5px); /* เด้งขึ้นเมื่อคลิก */
-  z-index: 2; /* เปลี่ยนให้ปุ่มที่คลิกอยู่ด้านหน้า */
+  z-index: 10; /* เปลี่ยนให้ปุ่มที่คลิกอยู่ด้านหน้า */
   background-color: #A3C4D7; /* สีพื้นหลังที่เปลี่ยนเมื่อคลิก */
 }
 

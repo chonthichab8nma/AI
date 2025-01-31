@@ -1,192 +1,191 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-    /* ให้ครอบคลุมทั้งหน้าจอ */
-    font-family: 'Arial', sans-serif;
-    background: url('BG.jpg') no-repeat center top;
-    background-attachment: scroll; /* ให้ภาพพื้นหลังเลื่อนตามการเลื่อนหน้าจอ */
-    background-size: cover;
+  /* ให้ครอบคลุมทั้งหน้าจอ */
+  font-family: 'Arial', sans-serif;
+  background: url('BG.jpg') no-repeat center top;
+  background-attachment: scroll; /* ให้ภาพพื้นหลังเลื่อนตามการเลื่อนหน้าจอ */
+  background-size: cover;
 }
 
 .banner {
-    position: relative;
-    width: 100%;
-    height: 120px;
-    left: 0;
-    top: 0;
-    background: url('banner.jpg') no-repeat center center;
-    background-size: cover;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start; /* จัดปุ่มให้อยู่ด้านบน */
-    padding-right: 20px;
-    padding-top: 70px; /* เพิ่มระยะห่างจากด้านบน */
-  }
-  
-  .button {
-    padding: 15px 30px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
-    border-radius: 15px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 0 10px;
-  }
-  
-  .plan-your-trip {
-    background-color: #79AFC7;
-  }
-  
-  .place-detail {
-    background-color: #79AFC7;
-  }
-  
-  .button:hover {
-    background-color: #C2E1F0;
-  }
-  
-  .plan-your-trip.active {
-    background-color: #C2E1F0;
-    transform: scale(1.1);
-  }
-  
-  .place-detail.active {
-    background-color: #79AFC7;
-    transform: scale(1);
-  }
-  
-  .banner button:focus {
-    outline: none;
-  }
-  
+  position: relative;
+  width: 100%;
+  height: 120px;
+  left: 0;
+  top: 0;
+  background: url('banner.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start; /* จัดปุ่มให้อยู่ด้านบน */
+  padding-right: 20px;
+  padding-top: 70px; /* เพิ่มระยะห่างจากด้านบน */
+}
+
+.button {
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 10px;
+}
+
+.plan-your-trip {
+  background-color: #79AFC7;
+}
+
+.place-detail {
+  background-color: #79AFC7;
+}
+
+.button:hover {
+  background-color: #C2E1F0;
+}
+
+.plan-your-trip.active {
+  background-color: #C2E1F0;
+  transform: scale(1.1);
+}
+
+.place-detail.active {
+  background-color: #79AFC7;
+  transform: scale(1);
+}
+
+.banner button:focus {
+  outline: none;
+}
+
 .horizontal-box {
-    position: absolute;
-    width: 800px; /* ความกว้างของกล่อง */
-    height: 100px; /* ความสูงของกล่อง (แนวนอน) */
-    left: 15%; /* ขอบด้านซ้ายไม่ชิดมาก */
-    top: 29.5%; /* วางอยู่กลางหน้าจอในแนวตั้ง */
-    transform: translateY(-50%); /* ย้ายขึ้นลงเพื่อให้ตรงกลาง */
-    background: rgba(253, 244, 232, 0.5); /* สี FDF4E8 โปร่งแสง 50% */
-    border-radius: 10px; /* ขอบมน */
-    border: 2px solid #E6CAA5;
-    display: flex;
-    justify-content: center; /* จัดข้อความกลางแนวนอน */
-    align-items: center; /* จัดข้อความกลางแนวตั้ง */
-  }
-  .box-text {
-    font-family: 'Inter', sans-serif; /* ฟอนต์ */
-    font-size: 70px; /* ขนาดฟอนต์ */
-    color: #202B64; /* สีตัวหนังสือ */
-    font-weight: bold; /* ตัวหนา */
-  }
+  position: absolute;
+  width: 800px; /* ความกว้างของกล่อง */
+  height: 100px; /* ความสูงของกล่อง (แนวนอน) */
+  left: 15%; /* ขอบด้านซ้ายไม่ชิดมาก */
+  top: 29.5%; /* วางอยู่กลางหน้าจอในแนวตั้ง */
+  transform: translateY(-50%); /* ย้ายขึ้นลงเพื่อให้ตรงกลาง */
+  background: rgba(253, 244, 232, 0.5); /* สี FDF4E8 โปร่งแสง 50% */
+  border-radius: 10px; /* ขอบมน */
+  border: 2px solid #E6CAA5;
+  display: flex;
+  justify-content: center; /* จัดข้อความกลางแนวนอน */
+  align-items: center; /* จัดข้อความกลางแนวตั้ง */
+}
+.box-text {
+  font-family: 'Inter', sans-serif; /* ฟอนต์ */
+  font-size: 70px; /* ขนาดฟอนต์ */
+  color: #202B64; /* สีตัวหนังสือ */
+  font-weight: bold; /* ตัวหนา */
+}
 
 .rectangle {
-    position: absolute;
-    width: 350px;
-    /* ความกว้างของกล่อง */
-    height: 450px;
-    /* ความสูงของกล่อง (เพิ่มจากเดิมเพื่อให้พอสำหรับ dropdown ใหม่) */
-    right: 2%;
-    /* ชิดขอบขวา */
-    top: 55%;
-    /* วางอยู่กลางหน้าจอในแนวตั้ง */
-    transform: translateY(-50%);
-    /* ย้ายขึ้นลงเพื่อให้ตรงกลาง */
-    background: rgba(253, 244, 232, 0.9); 
-    border: 2px solid #E6CAA5;
-    /* ขอบกล่องสี #E6CAA5 */
-    border-radius: 10px;
-    /* มุมโค้ง */
-    display: flex;
-    flex-direction: column;
-    /* วางเนื้อหาในแนวตั้ง */
-    justify-content: flex-start;
-    align-items: center;
-    /* จัดกลางแนวนอน */
-    font-family: 'Inter', sans-serif;
-    font-size: 24px;
-    color: #202B64;
-    padding-top: 20px;
-    /* เพิ่มระยะห่างจากด้านบน */
-    font-weight: bold;
-    /* ทำข้อความตัวหนา */
+  position: absolute;
+  width: 350px;
+  /* ความกว้างของกล่อง */
+  height: 450px;
+  /* ความสูงของกล่อง (เพิ่มจากเดิมเพื่อให้พอสำหรับ dropdown ใหม่) */
+  right: 2%;
+  /* ชิดขอบขวา */
+  top: 55%;
+  /* วางอยู่กลางหน้าจอในแนวตั้ง */
+  transform: translateY(-50%);
+  /* ย้ายขึ้นลงเพื่อให้ตรงกลาง */
+  background: rgba(253, 244, 232, 0.9); 
+  border: 2px solid #E6CAA5;
+  /* ขอบกล่องสี #E6CAA5 */
+  border-radius: 10px;
+  /* มุมโค้ง */
+  display: flex;
+  flex-direction: column;
+  /* วางเนื้อหาในแนวตั้ง */
+  justify-content: flex-start;
+  align-items: center;
+  /* จัดกลางแนวนอน */
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  color: #202B64;
+  padding-top: 20px;
+  /* เพิ่มระยะห่างจากด้านบน */
+  font-weight: bold;
+  /* ทำข้อความตัวหนา */
 }
 
 .rectangle>div:first-child {
-    margin-bottom: 50px;
-    /* เพิ่มระยะห่างจากข้อความ "Plan Your Trip" */
+  margin-bottom: 50px;
+  /* เพิ่มระยะห่างจากข้อความ "Plan Your Trip" */
 }
 
 .form-container {
-    width: 80%;
-    /* ความกว้างของฟอร์ม */
-    display: flex;
-    /* ใช้ flexbox เพื่อจัดวางในแนวนอน */
-    align-items: center;
-    /* จัดกลางในแนวตั้ง */
-    justify-content: space-between;
-    /* เว้นระยะห่างระหว่าง label และ select */
-    margin-top: 10px;
-    /* ระยะห่างจากข้อความ Plan Your Trip */
+  width: 80%;
+  /* ความกว้างของฟอร์ม */
+  display: flex;
+  /* ใช้ flexbox เพื่อจัดวางในแนวนอน */
+  align-items: center;
+  /* จัดกลางในแนวตั้ง */
+  justify-content: space-between;
+  /* เว้นระยะห่างระหว่าง label และ select */
+  margin-top: 10px;
+  /* ระยะห่างจากข้อความ Plan Your Trip */
 }
 
 label {
-    font-size: 18px;
-    color: #202B64;
-    margin-right: 10px;
-    /* เว้นระยะห่างจาก dropdown */
+  font-size: 18px;
+  color: #202B64;
+  margin-right: 10px;
+  /* เว้นระยะห่างจาก dropdown */
 }
 
 select {
-    width: 48%;
-    /* กำหนดให้ dropdown ทั้งสองมีความกว้างเท่ากัน */
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #E6CAA5;
-    background-color: #fff;
+  width: 48%;
+  /* กำหนดให้ dropdown ทั้งสองมีความกว้างเท่ากัน */
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #E6CAA5;
+  background-color: #fff;
 }
 
 .select-container {
-    width: 100%;
-    /* ความกว้างของฟอร์ม */
-    display: flex;
-    /* ใช้ flexbox เพื่อจัดวาง dropdown ให้อยู่ในบรรทัดเดียวกัน */
-    justify-content: space-between;
-    /* ให้ระยะห่างระหว่าง dropdown */
-    margin-top: 15px;
-    /* เว้นระยะห่างจาก dropdown จังหวัด */
+  width: 100%;
+  /* ความกว้างของฟอร์ม */
+  display: flex;
+  /* ใช้ flexbox เพื่อจัดวาง dropdown ให้อยู่ในบรรทัดเดียวกัน */
+  justify-content: space-between;
+  /* ให้ระยะห่างระหว่าง dropdown */
+  margin-top: 15px;
+  /* เว้นระยะห่างจาก dropdown จังหวัด */
 }
 
 .select-container .form-container {
-    width: 48%;
-    /* ปรับให้ dropdown ทั้งสองมีขนาดใกล้เคียงกัน */
+  width: 48%;
+  /* ปรับให้ dropdown ทั้งสองมีขนาดใกล้เคียงกัน */
 }
 
 .next-button-container {
-    margin-top: 195px; /* เพิ่มระยะห่างจากด้านบน (ปรับเพิ่มจากเดิม) */
-    width: 80%;
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .next-button {
-    padding: 10px 20px;
-    background-color: #fff;
-    color: #202B64;
-    border: 2px solid #E6CAA5;
-    border-radius: 10px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .next-button:hover {
-    background-color: #E6CAA5;
-  }
-  
+  margin-top: 195px; /* เพิ่มระยะห่างจากด้านบน (ปรับเพิ่มจากเดิม) */
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.next-button {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #202B64;
+  border: 2px solid #E6CAA5;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.next-button:hover {
+  background-color: #E6CAA5;
+}

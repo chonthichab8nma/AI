@@ -154,7 +154,7 @@ h3 {
 
 /* เปลี่ยนสีเมื่อ dropdown ถูกเลือก */
 .dropdown-select:focus {
-    border-color: #007BFF;
+    border-color: #00a169;
     outline: none;
 }
 
@@ -170,7 +170,7 @@ h3 {
 
 /* ปรับขนาดการ์ดให้เป็นแนวนอน */
 .place-card {
-    width: 620px;
+    width: 632px;
     display: flex;
     flex-direction: row;
     /* เรียงซ้ายไปขวา */
@@ -220,20 +220,28 @@ h3 {
     margin-bottom: 5px;
 }
 
-/* สไตล์สำหรับคำบรรยายที่ถูกซ่อนไว้ */
+/* สไตล์สำหรับคำบรรยายที่ถูกตัด */
 .place-description {
     font-size: 13.5px;
     color: #666;
-    line-height: 1.5;
-    max-height: 70px;
-    /* ขนาดที่กำหนดให้แสดงแค่บางส่วน */
+    line-height: 1.8;
+    max-height: 65px;
+    /* ขนาดสูงสุดที่แสดงเมื่อข้อความถูกตัด */
     overflow: hidden;
-    /* ซ่อนข้อความส่วนเกิน */
+    /* ซ่อนข้อความที่เกิน */
     text-overflow: ellipsis;
     /* เพิ่ม '...' เมื่อข้อความถูกตัด */
     transition: max-height 0.3s ease;
     /* การเปลี่ยนแปลงความสูง */
     position: relative;
+}
+
+/* เมื่อแสดงข้อความทั้งหมด */
+.place-description.full {
+    max-height: none;
+    /* แสดงข้อความทั้งหมด */
+    color: #333;
+    /* เปลี่ยนสีข้อความ */
 }
 
 /* สร้างเอฟเฟกต์เบลอสำหรับข้อความที่ถูกตัด */
@@ -247,20 +255,6 @@ h3 {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
     /* เบลอด้านล่าง */
     z-index: 1;
-}
-
-/* เพิ่มคลาส hidden ให้ข้อความที่ถูกตัด */
-.place-description.hidden {
-    color: rgba(102, 102, 102, 0.6);
-    /* เปลี่ยนสีข้อความให้ซีดลง */
-}
-
-/* สไตล์เมื่อคลิกดูรายละเอียด */
-.place-description.full {
-    max-height: none;
-    /* ขยายให้แสดงข้อความทั้งหมด */
-    color: #333;
-    /* เปลี่ยนสีข้อความ */
 }
 
 /* เมื่อแสดงเต็มแล้ว เอฟเฟกต์เบลอจะหายไป */

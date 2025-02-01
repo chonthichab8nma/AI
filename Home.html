@@ -12,8 +12,10 @@
 
 <body>
     <div class="banner">
-        <button class="button plan-your-trip">Plan Your Trip</button>
-        <button class="button place-detail">Place Detail</button>
+        <div class="button-container">
+            <button id="button1" class="button active" onclick="changeStyle(1)">Plan Your Trip</button>
+            <button id="button2" class="button" onclick="changeStyle(2)">Place Details</button>
+          </div>
     </div>
     <div class="horizontal-box">
         <span class="box-text">Plan your perfect trip!</span>

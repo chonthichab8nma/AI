@@ -222,7 +222,7 @@ h3 {
 
 /* สไตล์สำหรับคำบรรยายที่ถูกซ่อนไว้ */
 .place-description {
-    font-size: 12px;
+    font-size: 13px;
     color: #666;
     line-height: 1.5;
     max-height: 70px;

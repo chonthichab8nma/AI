@@ -13,33 +13,32 @@ body {
   color: #333;
 }
 
-/* แบนเนอร์ */
 .banner {
   position: relative;
-  background: no-repeat center center;
   width: 100%;
   height: 120px;
   overflow: hidden;
-  padding: 10px 0; /*ตรงนี้ถ้าลบออกแบนเนอร์จะกลับมาปกติ*/
-  
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.menu {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
 }
 
 .banner-image {
-  width: 100%;
+  width: 100vw; /* ทำให้รูปเต็มหน้าจอทั้งแนวขวา */
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
-/* ปุ่มในแบนเนอร์ */
-.menu {
-  position: absolute;
-  right: 20px;
-  bottom: 0px;
-  display: flex;
-  gap: -10px;
-  z-index: 10; /* ปุ่มอยู่หน้าสุด */
-}
 
 button {
  

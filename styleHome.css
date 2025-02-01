@@ -26,6 +26,7 @@ body {
   padding-top: 70px; /* เพิ่มระยะห่างจากด้านบน */
 }
 
+<<<<<<< HEAD
 .button {
   padding: 15px 30px;
   font-size: 18px;
@@ -44,6 +45,62 @@ body {
 
 .place-detail {
   background-color: #79AFC7;
+=======
+.button-container {
+  position: absolute;
+  right: 20px;
+  top: 79.85px;  /* ขยับปุ่มขึ้นจากขอบบน */
+  display: flex;
+  gap: -10px;  /* ลดช่องว่างระหว่างปุ่ม */
+  z-index: 10;
+}
+
+button {
+  font-size: 16px;
+  padding: 12px 40px;  /* เพิ่มความกว้างของปุ่ม */
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #38809f;
+  color: #333;
+  border: none;
+  border-radius: 15px 15px 0 0;  /* ขอบบนมีความโค้ง, ขอบล่างเหลี่ยม */
+  height: 40px;  /* ความสูงของปุ่ม */
+  margin-bottom: 0px;  /* ขอบล่างไม่ขยับ */
+  display: flex;
+  justify-content: center;  /* จัดตำแหน่งตัวอักษรแนวนอน */
+  align-items: center;  /* จัดตำแหน่งตัวอักษรแนวตั้ง */
+}
+
+button#button1 {
+  font-size: 16px;
+  padding-top: 10px;  /* ขอบบนเริ่มต้น */
+}
+
+button#button1.active {
+  font-size: 20px;  /* ปรับขนาดตัวอักษร */
+  padding-top: 20px;  /* ขอบบนยกขึ้นเมื่อกด */
+  background-color: #79AFC7;
+  color: white;
+  transform: translateY(-10px);  /* ยกปุ่มขึ้นจากขอบบน */
+  box-shadow: 0 2px 0 0 #79AFC7;  /* ขอบล่างตรงเท่ากับปุ่มที่ไม่ได้กด */
+  height: 50px;  /* เพิ่มความสูงให้กับปุ่มที่ถูกกด */
+}
+
+button#button2 {
+  font-size: 16px;
+  padding-top: 10px;  /* ขอบบนเริ่มต้น */
+}
+
+button#button2.active {
+  font-size: 20px;  /* ปรับขนาดตัวอักษร */
+  padding-top: 20px;  /* ขอบบนยกขึ้นเมื่อกด */
+  background-color: #79AFC7;
+  color: white;
+  transform: translateY(-10px);  /* ยกปุ่มขึ้นจากขอบบน */
+  box-shadow: 0 2px 0 0 #79AFC7;  /* ขอบล่างตรงเท่ากับปุ่มที่ไม่ได้กด */
+  height: 50px;  /* เพิ่มความสูงให้กับปุ่มที่ถูกกด */
+>>>>>>> d958b85df027afdd98fac6f86eb42e36759b8225
 }
 
 .button:hover {

@@ -7,9 +7,12 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background: url('background.jpg') no-repeat center top; /* ปรับตำแหน่งภาพพื้นหลังให้เลื่อนลง */
-  background-size: cover; /* ทำให้ภาพพื้นหลังครอบคลุมหน้าจอ */
-  background-attachment: scroll; /* ให้ภาพพื้นหลังเลื่อนตามการเลื่อนหน้าจอ */
+  background: url('background.jpg') no-repeat center top;
+  /* ปรับตำแหน่งภาพพื้นหลังให้เลื่อนลง */
+  background-size: cover;
+  /* ทำให้ภาพพื้นหลังครอบคลุมหน้าจอ */
+  background-attachment: scroll;
+  /* ให้ภาพพื้นหลังเลื่อนตามการเลื่อนหน้าจอ */
   color: #333;
 }
 
@@ -23,74 +26,107 @@ body {
   align-items: flex-start;
 }
 
+.banner-image {
+  width: 100vw;
+  /* ทำให้รูปเต็มหน้าจอทั้งแนวขวา */
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .button-container {
   position: absolute;
   right: 20px;
-  top: 79.85px;  /* ตำแหน่งเริ่มต้น */
+  top: 79.85px;
+  /* ตำแหน่งเริ่มต้น */
   display: flex;
-  gap: 0px;  /* ให้ปุ่มติดกัน */
+  gap: 0px;
+  /* ให้ปุ่มติดกัน */
   z-index: 10;
 }
 
 button {
   font-size: 16px;
-  padding: 12px 40px;  /* กำหนดขนาดปุ่ม */
+  padding: 12px 40px;
+  /* กำหนดขนาดปุ่ม */
   margin: 0;
   cursor: pointer;
   transition: all 0.3s ease;
   background-color: #38809f;
   color: #333;
   border: none;
-  border-radius: 15px 15px 0 0;  /* ขอบบนโค้ง, ขอบล่างเหลี่ยม */
-  height: 40px;  /* กำหนดความสูง */
-  margin-bottom: 0px;  /* ขอบล่างไม่ขยับ */
+  border-radius: 15px 15px 0 0;
+  /* ขอบบนโค้ง, ขอบล่างเหลี่ยม */
+  height: 40px;
+  /* กำหนดความสูง */
+  margin-bottom: 0px;
+  /* ขอบล่างไม่ขยับ */
   display: flex;
-  justify-content: center;  /* จัดตำแหน่งตัวอักษรแนวนอน */
-  align-items: center;  /* จัดตำแหน่งตัวอักษรแนวตั้ง */
+  justify-content: center;
+  /* จัดตำแหน่งตัวอักษรแนวนอน */
+  align-items: center;
+  /* จัดตำแหน่งตัวอักษรแนวตั้ง */
 }
 
 button.active {
   background-color: #79AFC7;
   color: white;
-  transform: translateY(-10px);  /* ยกขึ้น */
-  box-shadow: 0 0 0 0 #79AFC7;  /* คงขอบล่างให้เท่ากับปุ่มที่ไม่ถูกกด */
-  z-index: 2;  /* ซ้อนทับปุ่มที่ยังไม่ได้กด */
+  transform: translateY(-10px);
+  /* ยกขึ้น */
+  box-shadow: 0 0 0 0 #79AFC7;
+  /* คงขอบล่างให้เท่ากับปุ่มที่ไม่ถูกกด */
+  z-index: 2;
+  /* ซ้อนทับปุ่มที่ยังไม่ได้กด */
 }
 
 button#button1 {
   font-size: 16px;
-  padding-top: 10px;  /* ขอบบนเริ่มต้น */
+  padding-top: 10px;
+  /* ขอบบนเริ่มต้น */
 }
+
 /* ทำให้ปุ่ม 1 ค้างอยู่และทับปุ่ม 2 ตั้งแต่เริ่ม */
 button#button1.active {
-  font-size: 20px;  /* ปรับขนาดตัวอักษร */
-  padding-top: 20px;  /* ขอบบนยกขึ้นเมื่อกด */
+  font-size: 20px;
+  /* ปรับขนาดตัวอักษร */
+  padding-top: 20px;
+  /* ขอบบนยกขึ้นเมื่อกด */
   background-color: #79AFC7;
   color: white;
-  transform: translateY(-10px);  /* ยกปุ่มขึ้นจากขอบบน */
-  box-shadow: 0 2px 0 0 #79AFC7;  /* ขอบล่างตรงเท่ากับปุ่มที่ไม่ได้กด */
-  height: 50px;  /* เพิ่มความสูงให้กับปุ่มที่ถูกกด */
+  transform: translateY(-10px);
+  /* ยกปุ่มขึ้นจากขอบบน */
+  box-shadow: 0 2px 0 0 #79AFC7;
+  /* ขอบล่างตรงเท่ากับปุ่มที่ไม่ได้กด */
+  height: 50px;
+  /* เพิ่มความสูงให้กับปุ่มที่ถูกกด */
 }
 
 button#button2 {
   font-size: 16px;
-  padding-top: 10px;  /* ขอบบนเริ่มต้น */
+  padding-top: 10px;
+  /* ขอบบนเริ่มต้น */
 }
 
 button#button2.active {
-  font-size: 20px;  /* ปรับขนาดตัวอักษร */
-  padding-top: 20px;  /* ขอบบนยกขึ้นเมื่อกด */
+  font-size: 20px;
+  /* ปรับขนาดตัวอักษร */
+  padding-top: 20px;
+  /* ขอบบนยกขึ้นเมื่อกด */
   background-color: #79AFC7;
   color: white;
-  transform: translateY(-10px);  /* ยกปุ่มขึ้นจากขอบบน */
-  box-shadow: 0 2px 0 0 #79AFC7;  /* ขอบล่างตรงเท่ากับปุ่มที่ไม่ได้กด */
-  height: 50px;  /* เพิ่มความสูงให้กับปุ่มที่ถูกกด */
+  transform: translateY(-10px);
+  /* ยกปุ่มขึ้นจากขอบบน */
+  box-shadow: 0 2px 0 0 #79AFC7;
+  /* ขอบล่างตรงเท่ากับปุ่มที่ไม่ได้กด */
+  height: 50px;
+  /* เพิ่มความสูงให้กับปุ่มที่ถูกกด */
 }
 
 /* เนื้อหาทริป */
 .trip-details {
   padding: 20px;
-  background: rgba(253, 244, 232, 0.9);  /* สี FDF4E8 โปร่งแสง 90% */
+  background: rgba(253, 244, 232, 0.9);
+  /* สี FDF4E8 โปร่งแสง 90% */
   border: 2px solid #E6CAA5;
   border-radius: 12px;
   margin: 20px auto;

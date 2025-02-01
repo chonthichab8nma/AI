@@ -17,10 +17,21 @@ const placesData = {
             image: "emerald_pool.jpg"
         },
         {
-            name: "2. อ่าวไร่เลย",
+            name: "2. อ่าวไร่เลย์",
+            description: "เป็นสถานที่ท่องเที่ยวชื่อดังของจังหวัดกระบี่ ประเทศไทย ขึ้นชื่อเรื่องชายหาดที่สวยงาม น้ำทะเลใส และบรรยากาศเงียบสงบ เหมาะสำหรับการเล่นน้ำทะเล พักผ่อน และปีนเขา",
+            image: "railay_beach.jpg"
+        },
+        {
+            name: "3. เกาะพีพี",
+            description: "สวรรค์กลางทะเลอันดามัน เป็นหมู่เกาะที่มีชื่อเสียงระดับโลก ตั้งอยู่ใน จังหวัดกระบี่ ประเทศไทย ขึ้นชื่อเรื่อง น้ำทะเลใส หาดทรายขาว และแนวปะการังที่สวยงาม ทำให้เป็นจุดหมายปลายทางยอดนิยมสำหรับการ ดำน้ำดูปะการังและท่องเที่ยวทางทะเล",
+            image: "emerald_pool.jpg"
+        },
+        {
+            name: "4. อ่าวไร่เลย์",
             description: "เป็นสถานที่ท่องเที่ยวชื่อดังของจังหวัดกระบี่ ประเทศไทย ขึ้นชื่อเรื่องชายหาดที่สวยงาม น้ำทะเลใส และบรรยากาศเงียบสงบ เหมาะสำหรับการเล่นน้ำทะเล พักผ่อน และปีนเขา",
             image: "railay_beach.jpg"
         }
+        
     ],
     phuket: [
         {
@@ -74,7 +85,7 @@ function displayPlaces(province) {
 
             // สร้างส่วนของรูปภาพ
             const placeImage = document.createElement("img");
-            placeImage.src = place.image;
+            placeImage.src = `images/${province}/${place.image}`; // ดึงรูปจากโฟลเดอร์จังหวัด
             placeImage.alt = place.name;
             placeImage.classList.add("place-image");
 
@@ -86,6 +97,7 @@ function displayPlaces(province) {
         });
     }
 }
+
 
 // ดึงค่าจังหวัดเมื่อมีการเปลี่ยนแปลง
 document.getElementById("province").addEventListener("change", function () {

@@ -16,10 +16,11 @@ function changeStyle(buttonNumber) {
     // เพิ่มคลาส active ให้กับปุ่มที่กด
     if (buttonNumber === 1) {
         document.getElementById('button1').classList.add('active');
+        window.location.href = 'Home.html';
     } else if (buttonNumber === 2) {
         document.getElementById('button2').classList.add('active');
         // เมื่อกดปุ่มที่ 2 ให้ไปที่หน้า plan_detail.html
-        //window.location.href = 'plan_detail.html';
+        window.location.href = 'plan_detail.html';
     }
 }
 
@@ -357,7 +358,6 @@ function toggleDescription(descriptionElement, buttonElement) {
         buttonElement.textContent = "ซ่อนรายละเอียด"; // เปลี่ยนข้อความปุ่มเป็น "ซ่อนรายละเอียด"
     }
 }
-
 
 // Event Listener เมื่อมีการเปลี่ยนค่าใน dropdown
 provinceSelect.addEventListener("change", function () {

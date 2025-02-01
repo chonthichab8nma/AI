@@ -26,7 +26,6 @@ body {
   padding-top: 70px; /* เพิ่มระยะห่างจากด้านบน */
 }
 
-<<<<<<< HEAD
 .button {
   padding: 15px 30px;
   font-size: 18px;
@@ -45,7 +44,7 @@ body {
 
 .place-detail {
   background-color: #79AFC7;
-=======
+}
 .button-container {
   position: absolute;
   right: 20px;
@@ -100,7 +99,7 @@ button#button2.active {
   transform: translateY(-10px);  /* ยกปุ่มขึ้นจากขอบบน */
   box-shadow: 0 2px 0 0 #79AFC7;  /* ขอบล่างตรงเท่ากับปุ่มที่ไม่ได้กด */
   height: 50px;  /* เพิ่มความสูงให้กับปุ่มที่ถูกกด */
->>>>>>> d958b85df027afdd98fac6f86eb42e36759b8225
+
 }
 
 .button:hover {

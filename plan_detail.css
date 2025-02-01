@@ -165,7 +165,7 @@ h3 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 50px;
-    padding: 80px;
+    padding: 100px;
 }
 
 /* ปรับขนาดการ์ดให้เป็นแนวนอน */
@@ -222,7 +222,7 @@ h3 {
 
 /* สไตล์สำหรับคำบรรยายที่ถูกซ่อนไว้ */
 .place-description {
-    font-size: 13px;
+    font-size: 13.5px;
     color: #666;
     line-height: 1.5;
     max-height: 70px;

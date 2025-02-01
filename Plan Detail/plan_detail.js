@@ -18,20 +18,20 @@ const placesData = {
         },
         {
             name: "2. อ่าวไร่เลย์",
-            description: "เป็นสถานที่ท่องเที่ยวชื่อดังของจังหวัดกระบี่ ประเทศไทย ขึ้นชื่อเรื่องชายหาดที่สวยงาม น้ำทะเลใส และบรรยากาศเงียบสงบ เหมาะสำหรับการเล่นน้ำทะเล พักผ่อน และปีนเขา",
+            description: "เป็นสถานที่ท่องเที่ยวชื่อดังของจังหวัดกระบี่ ประเทศไทย ขึ้นชื่อเรื่องชายหาดที่สวยงาม น้ำทะเลใสและบรรยากาศเงียบสงบ เหมาะสำหรับการเล่นน้ำทะเล พักผ่อน และปีนเขา",
             image: "railay_beach.jpg"
         },
         {
             name: "3. เกาะพีพี",
-            description: "สวรรค์กลางทะเลอันดามัน เป็นหมู่เกาะที่มีชื่อเสียงระดับโลก ตั้งอยู่ใน จังหวัดกระบี่ ประเทศไทย ขึ้นชื่อเรื่อง น้ำทะเลใส หาดทรายขาว และแนวปะการังที่สวยงาม ทำให้เป็นจุดหมายปลายทางยอดนิยมสำหรับการ ดำน้ำดูปะการังและท่องเที่ยวทางทะเล",
-            image: "emerald_pool.jpg"
+            description: "สวรรค์กลางทะเลอันดามัน เป็นหมู่เกาะที่มีชื่อเสียงระดับโลกตั้งอยู่ในจังหวัดกระบี่ ประเทศไทย ขึ้นชื่อเรื่องน้ำทะเลใส หาดทรายขาว และแนวปะการังที่สวยงาม ทำให้เป็นจุดหมายปลายทางยอดนิยมสำหรับการดำน้ำดูปะการังและท่องเที่ยวทางทะเล",
+            image: "koh_phi_phi.jpg"
         },
         {
-            name: "4. อ่าวไร่เลย์",
-            description: "เป็นสถานที่ท่องเที่ยวชื่อดังของจังหวัดกระบี่ ประเทศไทย ขึ้นชื่อเรื่องชายหาดที่สวยงาม น้ำทะเลใส และบรรยากาศเงียบสงบ เหมาะสำหรับการเล่นน้ำทะเล พักผ่อน และปีนเขา",
-            image: "railay_beach.jpg"
+            name: "4. เขาขนาบน้ำ",
+            description: "แลนด์มาร์กสำคัญของกระบี่ เป็นหนึ่งในจุดท่องเที่ยวที่โดดเด่นของ จังหวัดกระบี่ มีลักษณะเป็น ภูเขาหินปูนคู่ขนานกัน ตั้งตระหง่านขนาบสองฝั่งของแม่น้ำกระบี่ ทำให้วิวบริเวณนี้มีเอกลักษณ์และสวยงาม เหมาะสำหรับการถ่ายภาพ และชมทิวทัศน์ของแม่น้ำและทะเล",
+            image: "khao_khanap_nam.jpg"
         }
-        
+
     ],
     phuket: [
         {
@@ -75,29 +75,60 @@ function displayPlaces(province) {
 
             const placeName = document.createElement("h3");
             placeName.textContent = place.name;
-            placeName.classList.add("place-name"); // เพิ่มคลาสให้จัดตำแหน่งชื่อสถานที่
+            placeName.classList.add("place-name");
 
             const placeDescription = document.createElement("p");
             placeDescription.textContent = place.description;
+            placeDescription.classList.add("place-description");
 
             placeInfo.appendChild(placeName);
             placeInfo.appendChild(placeDescription);
 
+            // สร้างปุ่มดูรายละเอียด (ขยายคำบรรยาย)
+            const showMoreButton = document.createElement("button");
+            showMoreButton.classList.add("show-more-btn");
+            showMoreButton.textContent = "ดูรายละเอียด";  // ข้อความปุ่ม
+            showMoreButton.onclick = function () {
+                toggleDescription(placeDescription, showMoreButton);
+            };
+
+            // สร้างปุ่มอ่านเพิ่มเติม (ไปยังหน้าอื่น)
+            const readMoreButton = document.createElement("button");
+            readMoreButton.classList.add("read-more-btn");
+            readMoreButton.textContent = "อ่านเพิ่มเติม";  // ข้อความปุ่ม
+            readMoreButton.onclick = function () {
+                window.location.href = `details.html?place=${place.name}`; // เปลี่ยน URL ไปยังหน้ารายละเอียด
+            };
+
             // สร้างส่วนของรูปภาพ
             const placeImage = document.createElement("img");
-            placeImage.src = `images/${province}/${place.image}`; // ดึงรูปจากโฟลเดอร์จังหวัด
+            placeImage.src = `images/${province}/${place.image}`;
             placeImage.alt = place.name;
             placeImage.classList.add("place-image");
 
             // จัดวางภาพและข้อมูลใน place-card
             placeCard.appendChild(placeInfo);
             placeCard.appendChild(placeImage);
+            placeCard.appendChild(showMoreButton); // เพิ่มปุ่มดูรายละเอียด
+            placeCard.appendChild(readMoreButton); // เพิ่มปุ่มอ่านเพิ่มเติม
 
             container.appendChild(placeCard);
         });
     }
 }
 
+// ฟังก์ชันเปิด/ปิดการแสดงคำบรรยาย
+function toggleDescription(descriptionElement, buttonElement) {
+    if (descriptionElement.style.maxHeight === "none") {
+        // ซ่อนคำบรรยายและแสดงปุ่ม "ดูรายละเอียด"
+        descriptionElement.style.maxHeight = "50px"; // ปรับขนาดสูงสุดของข้อความที่จะแสดง
+        buttonElement.textContent = "ดูรายละเอียด"; // เปลี่ยนข้อความปุ่มกลับเป็น "ดูรายละเอียด"
+    } else {
+        // แสดงข้อความทั้งหมดและแสดงปุ่ม "ซ่อนรายละเอียด"
+        descriptionElement.style.maxHeight = "none";
+        buttonElement.textContent = "ซ่อนรายละเอียด"; // เปลี่ยนข้อความปุ่มเป็น "ซ่อนรายละเอียด"
+    }
+}
 
 // ดึงค่าจังหวัดเมื่อมีการเปลี่ยนแปลง
 document.getElementById("province").addEventListener("change", function () {
@@ -110,3 +141,5 @@ provinceSelect.addEventListener("change", function () {
     const selectedProvince = provinceSelect.value;
     displayPlaces(selectedProvince);
 });
+
+

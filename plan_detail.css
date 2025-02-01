@@ -33,36 +33,85 @@ body {
     object-position: center;
 }
 
-/* ปุ่มในแบนเนอร์ */
-.menu {
+.button-container {
     position: absolute;
     right: 20px;
-    bottom: 0px;
+    top: 79.85px;
+    /* ขยับปุ่มขึ้นจากขอบบน */
     display: flex;
     gap: -10px;
+    /* ลดช่องว่างระหว่างปุ่ม */
     z-index: 10;
-    /* ปุ่มอยู่หน้าสุด */
 }
 
 button {
-    background-color: #79AFC7;
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 10px 30px;
+    font-size: 16px;
+    padding: 12px 40px;
+    /* เพิ่มความกว้างของปุ่ม */
+    margin: 0;
     cursor: pointer;
-    border-top-left-radius: 15px;
-    /* ขอบมนที่มุมบนซ้าย */
-    border-top-right-radius: 15px;
-    /* ขอบมนที่มุมบนขวา */
-    border-bottom-left-radius: 0px;
-    /* มุมล่างซ้ายเป็นเหลี่ยม */
-    border-bottom-right-radius: 0px;
-    /* มุมล่างขวาเป็นเหลี่ยม */
-    position: relative;
-    transition: transform 0.2s ease-in-out, z-index 0s 0.2s;
-    /* การเคลื่อนไหวเมื่อคลิก และเปลี่ยน z-index หลังจากเด้ง */
-    z-index: 1;
-    /* ปุ่มเริ่มต้นอยู่ด้านล่าง */
+    transition: all 0.3s ease;
+    background-color: #38809f;
+    color: #333;
+    border: none;
+    border-radius: 15px 15px 0 0;
+    /* ขอบบนมีความโค้ง, ขอบล่างเหลี่ยม */
+    height: 40px;
+    /* ความสูงของปุ่ม */
+    margin-bottom: 0px;
+    /* ขอบล่างไม่ขยับ */
+    display: flex;
+    justify-content: center;
+    /* จัดตำแหน่งตัวอักษรแนวนอน */
+    align-items: center;
+    /* จัดตำแหน่งตัวอักษรแนวตั้ง */
+}
+
+button#button1 {
+    font-size: 16px;
+    padding-top: 10px;
+    /* ขอบบนเริ่มต้น */
+}
+
+button#button1.active {
+    font-size: 20px;
+    /* ปรับขนาดตัวอักษร */
+    padding-top: 20px;
+    /* ขอบบนยกขึ้นเมื่อกด */
+    background-color: #79AFC7;
+    color: white;
+    transform: translateY(-10px);
+    /* ยกปุ่มขึ้นจากขอบบน */
+    box-shadow: 0 2px 0 0 #79AFC7;
+    /* ขอบล่างตรงเท่ากับปุ่มที่ไม่ได้กด */
+    height: 50px;
+    /* เพิ่มความสูงให้กับปุ่มที่ถูกกด */
+}
+
+button#button2 {
+    font-size: 16px;
+    padding-top: 10px;
+    /* ขอบบนเริ่มต้น */
+}
+
+button#button2.active {
+    font-size: 20px;
+    /* ปรับขนาดตัวอักษร */
+    padding-top: 20px;
+    /* ขอบบนยกขึ้นเมื่อกด */
+    background-color: #79AFC7;
+    color: white;
+    transform: translateY(-10px);
+    /* ยกปุ่มขึ้นจากขอบบน */
+    box-shadow: 0 2px 0 0 #79AFC7;
+    /* ขอบล่างตรงเท่ากับปุ่มที่ไม่ได้กด */
+    height: 50px;
+    /* เพิ่มความสูงให้กับปุ่มที่ถูกกด */
+}
+
+button.active {
+    background-color: #79AFC7;
+    color: white;
 }
 
 button:hover {

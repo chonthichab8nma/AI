@@ -8,6 +8,21 @@ document.addEventListener("DOMContentLoaded", () => {
 const provinceSelect = document.getElementById("province");
 const placeContainer = document.getElementById("place-container");
 
+function changeStyle(buttonNumber) {
+    // รีเซ็ตสถานะของปุ่มทั้งสอง
+    document.getElementById('button1').classList.remove('active');
+    document.getElementById('button2').classList.remove('active');
+
+    // เพิ่มคลาส active ให้กับปุ่มที่กด
+    if (buttonNumber === 1) {
+        document.getElementById('button1').classList.add('active');
+    } else if (buttonNumber === 2) {
+        document.getElementById('button2').classList.add('active');
+        // เมื่อกดปุ่มที่ 2 ให้ไปที่หน้า plan_detail.html
+        //window.location.href = 'plan_detail.html';
+    }
+}
+
 // ข้อมูลสถานที่ท่องเที่ยวของแต่ละจังหวัด
 const placesData = {
     krabi: [

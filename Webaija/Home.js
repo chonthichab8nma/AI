@@ -9,5 +9,9 @@ document.querySelector('.next-button').addEventListener('click', function() {
 
     // Redirect to the tripsummary page with query parameters
     window.location.href = url;
-  
+});
+
+// Add event listener for "Place Detail" button
+document.querySelector('.place-detail-button').addEventListener('click', function() {
+    window.location.href = 'plan_detail.html';
 });

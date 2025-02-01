@@ -12,14 +12,14 @@ const placeContainer = document.getElementById("place-container");
 const placesData = {
     krabi: [
         {
-            name: "เกาะพีพี",
-            description: "หมู่เกาะที่มีน้ำทะเลใสและหาดทรายขาวสวยงาม เหมาะสำหรับดำน้ำและพักผ่อน",
-            image: "koh_phi_phi.jpg"
+            name: "1. สระมรกต",
+            description: "เป็นแหล่งท่องเที่ยวธรรมชาติที่มีชื่อเสียงในจังหวัดกระบี่ ประเทศไทย เป็นน้ำพุร้อนธรรมชาติ ที่เกิดจากกระแสน้ำใต้ดินไหลผ่านชั้นหินปูน ทำให้น้ำมีสีเขียวมรกต ใสสะอาดและสวยงามเป็นเอกลักษณ์",
+            image: "emerald_pool.jpg"
         },
         {
-            name: "ทะเลแหวก",
-            description: "สถานที่มหัศจรรย์ที่เมื่อน้ำลดจะเห็นสันทรายเชื่อมระหว่างเกาะต่างๆ",
-            image: "talay_waek.jpg"
+            name: "2. อ่าวไร่เลย",
+            description: "เป็นสถานที่ท่องเที่ยวชื่อดังของจังหวัดกระบี่ ประเทศไทย ขึ้นชื่อเรื่องชายหาดที่สวยงาม น้ำทะเลใส และบรรยากาศเงียบสงบ เหมาะสำหรับการเล่นน้ำทะเล พักผ่อน และปีนเขา",
+            image: "railay_beach.jpg"
         }
     ],
     phuket: [
@@ -48,27 +48,50 @@ const placesData = {
     ]
 };
 
-// ฟังก์ชันสร้างการ์ดแสดงข้อมูลสถานที่ท่องเที่ยว
+// ฟังก์ชันแสดงข้อมูลสถานที่
 function displayPlaces(province) {
-    placeContainer.innerHTML = ""; // ล้างข้อมูลก่อน
+    const container = document.getElementById("place-container");
+    container.innerHTML = ""; // ล้างข้อมูลเก่าออก
 
     if (placesData[province]) {
         placesData[province].forEach(place => {
-            const card = document.createElement("div");
-            card.classList.add("place-card");
+            const placeCard = document.createElement("div");
+            placeCard.classList.add("place-card");
 
-            card.innerHTML = `
-                <img src="images/${place.image}" alt="${place.name}" class="place-image">
-                <h3>${place.name}</h3>
-                <p>${place.description}</p>
-            `;
+            // สร้างส่วนของข้อมูลสถานที่
+            const placeInfo = document.createElement("div");
+            placeInfo.classList.add("place-info");
 
-            placeContainer.appendChild(card);
+            const placeName = document.createElement("h3");
+            placeName.textContent = place.name;
+            placeName.classList.add("place-name"); // เพิ่มคลาสให้จัดตำแหน่งชื่อสถานที่
+
+            const placeDescription = document.createElement("p");
+            placeDescription.textContent = place.description;
+
+            placeInfo.appendChild(placeName);
+            placeInfo.appendChild(placeDescription);
+
+            // สร้างส่วนของรูปภาพ
+            const placeImage = document.createElement("img");
+            placeImage.src = place.image;
+            placeImage.alt = place.name;
+            placeImage.classList.add("place-image");
+
+            // จัดวางภาพและข้อมูลใน place-card
+            placeCard.appendChild(placeInfo);
+            placeCard.appendChild(placeImage);
+
+            container.appendChild(placeCard);
         });
-    } else {
-        placeContainer.innerHTML = "<p>ไม่มีข้อมูลสถานที่ท่องเที่ยวสำหรับจังหวัดนี้</p>";
     }
 }
+
+// ดึงค่าจังหวัดเมื่อมีการเปลี่ยนแปลง
+document.getElementById("province").addEventListener("change", function () {
+    displayPlaces(this.value);
+});
+
 
 // Event Listener เมื่อมีการเปลี่ยนค่าใน dropdown
 provinceSelect.addEventListener("change", function () {

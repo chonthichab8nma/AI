@@ -10,10 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // แปลงชื่อจังหวัดจากอังกฤษเป็นไทย (เฉพาะที่ต้องการเปลี่ยน)
   const provinceMapping = {
-    "Phang Nga": "พังงา"
+    "Phang Nga": "พังงา",
+    "Phuket": "ภูเก็ต",
+    "Krabi": "กระบี่",
+    "Surat Thani": "สุราษฎร์ธานี",
+    "Nakhon Si Thammarat": "นครศรีธรรมราช"
   };
   const provinceThai = provinceMapping[province] || province;
-
 
   // อัปเดตหัวข้อทริป
   const tripTitle = document.getElementById("tripTitle");
@@ -47,9 +50,32 @@ document.addEventListener("DOMContentLoaded", () => {
         { day: "วันที่ 4", events: ["08:00 น. เดินทางไปยังอุทยานแห่งชาติอ่าวพังงา เที่ยวชมธรรมชาติ", "09:00 น. เดินทางไปยังหมู่บ้านบางพัฒน์ เรียนรู้วิถีชีวิตชาวบ้าน", "12:00 น. รับประทานอาหารกลางวัน ", "13:00 น. เดินทางไปสนามบินภูเก็ต เพื่อเดินทางกลับ"] },
         { day: "วันที่ 5", events: ["08:00 น. รับประทานอาหารเช้าที่โรงแรม", "09:00 น. เดินทางไปสนามบินภูเก็ต เพื่อเดินทางกลับ"] }
       ]
+    },
+    "Nakhon Si Thammarat": {
+      2: [
+        { day: "วันที่ 1", events: ["สักการะพระธาตุนครศรีธรรมราช", "เยือนหมู่บ้านคีรีวง"] },
+        { day: "วันที่ 2", events: ["ชิมอาหารพื้นเมือง", "ชมวิวทะเลที่หาดขนอม"] }
+      ]
+    },
+    "Phuket": {
+      1: [
+        { day: "วันที่ 1", events: ["เช็คอินที่หาดป่าตอง", "เดินเล่นริมชายหาด"] }
+      ]
+    },
+    "Krabi": {
+      2: [
+        { day: "วันที่ 1", events: ["เยือนหาดไร่เลย์", "ทานอาหารทะเลสด"] },
+        { day: "วันที่ 2", events: ["พายเรือคายัคที่อ่าวนาง"] }
+      ]
+    },
+    "Surat Thani": {
+      3: [
+        { day: "วันที่ 1", events: ["เที่ยวเกาะสมุย"] },
+        { day: "วันที่ 2", events: ["ทัวร์เกาะเต่า"] },
+        { day: "วันที่ 3", events: ["พักผ่อนที่ชายหาด"] }
+      ]
     }
   };
-  
 
   // ฟังก์ชันแสดงรายละเอียดทริป
   const displayTripDetails = () => {
@@ -82,15 +108,12 @@ document.addEventListener("DOMContentLoaded", () => {
   planTripButton.addEventListener("click", (e) => {
     e.preventDefault();
     window.location.href = "Home.html"; // เปลี่ยนไปยังหน้า Home.html
-
   });
 
   placeDetailButton.addEventListener("click", (e) => {
     e.preventDefault();
     window.location.href = "plan_detail.html";
   });
-
-  //add
 
   // ทำให้ปุ่ม active เมื่อเข้าหน้านี้
   planTripButton.classList.add("active");
@@ -100,7 +123,6 @@ document.addEventListener("DOMContentLoaded", () => {
     planTripButton.classList.remove("active");
     placeDetailButton.classList.add("active");
   });
-
 
   // เริ่มต้นแสดงเนื้อหาทริปเมื่อหน้าโหลด
   displayTripDetails();

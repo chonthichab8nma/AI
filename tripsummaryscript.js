@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // อัปเดตหัวข้อทริป
   const tripTitle = document.getElementById("tripTitle");
-  tripTitle.textContent = `${provinceThai} ${days} วัน`; //สวัสดีค่า
+  tripTitle.textContent = `${provinceThai} ${days} วัน`; //สวัสดีค่า....
 
   // ข้อมูลรายละเอียดทริป
   const tripDetails = {

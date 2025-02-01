@@ -1,0 +1,311 @@
+/* รีเซ็ตค่าเริ่มต้น */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Mali", sans-serif;
+    background: url('background.jpg') no-repeat center top;
+    /* ปรับตำแหน่งภาพพื้นหลังให้เลื่อนลง */
+    background-size: cover;
+    /* ทำให้ภาพพื้นหลังครอบคลุมหน้าจอ */
+    background-attachment: scroll;
+    /* ให้ภาพพื้นหลังเลื่อนตามการเลื่อนหน้าจอ */
+    color: #333;
+}
+
+/* แบนเนอร์ */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    background: #000;
+    /* กำหนดพื้นหลังสีดำให้แบนเนอร์ */
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ปุ่มในแบนเนอร์ */
+.menu {
+    position: absolute;
+    right: 20px;
+    bottom: 0px;
+    display: flex;
+    gap: -10px;
+    z-index: 10;
+    /* ปุ่มอยู่หน้าสุด */
+}
+
+button {
+    background-color: #79AFC7;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-top-left-radius: 15px;
+    /* ขอบมนที่มุมบนซ้าย */
+    border-top-right-radius: 15px;
+    /* ขอบมนที่มุมบนขวา */
+    border-bottom-left-radius: 0px;
+    /* มุมล่างซ้ายเป็นเหลี่ยม */
+    border-bottom-right-radius: 0px;
+    /* มุมล่างขวาเป็นเหลี่ยม */
+    position: relative;
+    transition: transform 0.2s ease-in-out, z-index 0s 0.2s;
+    /* การเคลื่อนไหวเมื่อคลิก และเปลี่ยน z-index หลังจากเด้ง */
+    z-index: 1;
+    /* ปุ่มเริ่มต้นอยู่ด้านล่าง */
+}
+
+button:hover {
+    background-color: #79AFC7;
+}
+
+button:active {
+    transform: translateY(-5px);
+    /* เด้งขึ้นเมื่อคลิก */
+    z-index: 2;
+    /* เปลี่ยนให้ปุ่มที่คลิกอยู่ด้านหน้า */
+    background-color: #A3C4D7;
+    /* สีพื้นหลังที่เปลี่ยนเมื่อคลิก */
+}
+
+/* เมื่อคลิกที่ Plan Your Trip */
+#planTripButton.active {
+    z-index: 3;
+    transform: translateY(-10px);
+    /* ขยับขึ้นเมื่อเลือก */
+    background-color: #A3C4D7;
+    /* เปลี่ยนเป็นสีอ่อนเมื่อเลือก */
+}
+
+/* เมื่อคลิกที่ Place Detail */
+#placeDetailButton.active {
+    z-index: 3;
+    transform: translateY(-10px);
+    /* ขยับขึ้นเมื่อเลือก */
+    background-color: #A3C4D7;
+    /* เปลี่ยนเป็นสีอ่อนเมื่อเลือก */
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* ตั้งค่าให้ dropdown คงที่ */
+.dropdown {
+    position: absolute;
+    /* ให้ dropdown คงที่ */
+    bottom: 520px;
+    /* ตั้งให้ dropdown อยู่ห่างจากขอบล่างของหน้าจอ 520px */
+    right: 20px;
+    /* ตั้งให้ dropdown อยู่ห่างจากขอบขวาของหน้าจอ 20px */
+    z-index: 2000;
+    /* ให้ dropdown อยู่ด้านบนสุด */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* สไตล์ label */
+.dropdown-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+/* สไตล์ของ select box */
+.dropdown-select {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    background-color: #f0f0f0;
+    color: #333333;
+}
+
+/* เปลี่ยนสีเมื่อ hover */
+.dropdown-select:hover {
+    background-color: #e0e0e0;
+}
+
+/* เปลี่ยนสีเมื่อ dropdown ถูกเลือก */
+.dropdown-select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+
+/* จัดเรียง container ให้อยู่ตรงกลาง */
+#place-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    padding: 80px;
+}
+
+/* ปรับขนาดการ์ดให้เป็นแนวนอน */
+.place-card {
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    /* เรียงซ้ายไปขวา */
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    border: 4px solid #589c9b;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    /* ทำให้สามารถจัดตำแหน่งปุ่มได้ */
+    margin-bottom: 20px;
+}
+
+/* รูปภาพ (อยู่ด้านขวา) พร้อมกรอบสี่เหลี่ยม */
+.place-image {
+    width: 250px;
+    height: 250px;
+    object-fit: fill;
+    order: 2;
+    border-radius: 0;
+    /* เอามุมโค้งมนออก ให้เป็นสี่เหลี่ยม */
+    border: 2px solid #76b0c7;
+    /* สีกรอบ */
+    background-color: lightgray;
+}
+
+/* ปรับให้ข้อมูลเรียงจากบนลงล่าง */
+.place-info {
+    flex: 1;
+    font-family: "Mali", sans-serif;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* จัดเนื้อหาทั้งหมดไปด้านซ้าย */
+}
+
+/* สไตล์ชื่อสถานที่ */
+.place-name {
+    font-size: 20px;
+    /* ขนาดตัวอักษรของชื่อสถานที่ */
+    font-weight: bold;
+    color: #9ad4d3;
+    margin-bottom: 5px;
+}
+
+/* สไตล์สำหรับคำบรรยายที่ถูกซ่อนไว้ */
+.place-description {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    max-height: 70px;
+    /* ขนาดที่กำหนดให้แสดงแค่บางส่วน */
+    overflow: hidden;
+    /* ซ่อนข้อความส่วนเกิน */
+    text-overflow: ellipsis;
+    /* เพิ่ม '...' เมื่อข้อความถูกตัด */
+    transition: max-height 0.3s ease;
+    /* การเปลี่ยนแปลงความสูง */
+    position: relative;
+}
+
+/* สร้างเอฟเฟกต์เบลอสำหรับข้อความที่ถูกตัด */
+.place-description.hidden::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
+    /* เบลอด้านล่าง */
+    z-index: 1;
+}
+
+/* เพิ่มคลาส hidden ให้ข้อความที่ถูกตัด */
+.place-description.hidden {
+    color: rgba(102, 102, 102, 0.6);
+    /* เปลี่ยนสีข้อความให้ซีดลง */
+}
+
+/* สไตล์เมื่อคลิกดูรายละเอียด */
+.place-description.full {
+    max-height: none;
+    /* ขยายให้แสดงข้อความทั้งหมด */
+    color: #333;
+    /* เปลี่ยนสีข้อความ */
+}
+
+/* เมื่อแสดงเต็มแล้ว เอฟเฟกต์เบลอจะหายไป */
+.place-description.full::after {
+    content: none;
+}
+
+/* ปุ่มดูรายละเอียด (ขยายคำบรรยาย) */
+.show-more-btn {
+    position: absolute;
+    bottom: 5px;
+    left: 220px;
+    padding: 8px 15px;
+    background-color: #c3e5f2;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 5px;
+    width: 120px;
+    height: 35px;
+}
+
+.show-more-btn:hover {
+    background-color: #76b0c7;
+}
+
+/* ปุ่มอ่านเพิ่มเติม (ไปยังหน้าอื่น) */
+.read-more-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    padding: 8px 15px;
+    background-color: #edd7e8;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 5px;
+    width: 120px;
+    height: 35px;
+}
+
+.read-more-btn:hover {
+    background-color: #ba71a9;
+}

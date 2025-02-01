@@ -7,11 +7,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const province = urlParams.get('province') || "จังหวัดไม่ระบุ";  // จังหวัด
   const days = parseInt(urlParams.get('days')) || 0;               // จำนวนวัน
-  
+
+  // แปลงชื่อจังหวัดจากอังกฤษเป็นไทย (เฉพาะที่ต้องการเปลี่ยน)
+  const provinceMapping = {
+    "Phang Nga": "พังงา"
+  };
+  const provinceThai = provinceMapping[province] || province;
+
 
   // อัปเดตหัวข้อทริป
   const tripTitle = document.getElementById("tripTitle");
-  tripTitle.textContent = `${province} ${days} วัน`;
+  tripTitle.textContent = `${provinceThai} ${days} วัน`;
 
   // ข้อมูลรายละเอียดทริป
   const tripDetails = {
@@ -62,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   planTripButton.addEventListener("click", (e) => {
     e.preventDefault();
     window.location.href = "Home.html"; // เปลี่ยนไปยังหน้า Home.html
-    
+
   });
 
   placeDetailButton.addEventListener("click", (e) => {
@@ -73,14 +79,14 @@ document.addEventListener("DOMContentLoaded", () => {
   //add
 
   // ทำให้ปุ่ม active เมื่อเข้าหน้านี้
-    planTripButton.classList.add("active");
+  planTripButton.classList.add("active");
 
-    // ตั้งค่าให้เปลี่ยน active เมื่อคลิกปุ่มอื่น
-    placeDetailButton.addEventListener("click", () => {
-      planTripButton.classList.remove("active");
-      placeDetailButton.classList.add("active");
+  // ตั้งค่าให้เปลี่ยน active เมื่อคลิกปุ่มอื่น
+  placeDetailButton.addEventListener("click", () => {
+    planTripButton.classList.remove("active");
+    placeDetailButton.classList.add("active");
   });
-  
+
 
   // เริ่มต้นแสดงเนื้อหาทริปเมื่อหน้าโหลด
   displayTripDetails();

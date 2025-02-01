@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  /* ให้ครอบคลุมทั้งหน้าจอ */
+  font-family: 'Arial', sans-serif;
+  background: url('BG.jpg') no-repeat center top;
+  background-attachment: scroll; /* ให้ภาพพื้นหลังเลื่อนตามการเลื่อนหน้าจอ */
+  background-size: cover;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  left: 0;
+  top: 0;
+  background: url('banner.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start; /* จัดปุ่มให้อยู่ด้านบน */
+  padding-right: 20px;
+  padding-top: 84px; /* เพิ่มระยะห่างจากด้านบน */
+}
+
+/* ปุ่มในแบนเนอร์ */
+.menu {
+  position: absolute;
+  right: 20px;
+  bottom: 0px;
+  display: flex;
+  gap: -10px;
+  z-index: 10; /* ปุ่มอยู่หน้าสุด */
+}
+
+button {
+ 
+  background-color: #79AFC7;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+  border-top-left-radius: 15px;  /* ขอบมนที่มุมบนซ้าย */
+  border-top-right-radius: 15px; /* ขอบมนที่มุมบนขวา */
+  border-bottom-left-radius: 0px; /* มุมล่างซ้ายเป็นเหลี่ยม */
+  border-bottom-right-radius: 0px; /* มุมล่างขวาเป็นเหลี่ยม */
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  z-index: 10; /* ปุ่มเริ่มต้นอยู่ด้านล่าง */
+  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1); /* เงาด้านบนให้ดูเป็นแถบ */
+}
+
+button:hover {
+  background-color: #38809f;
+}
+
+button:active {
+  
+  z-index: 10; /* เปลี่ยนให้ปุ่มที่คลิกอยู่ด้านหน้า */
+  background-color: #A3C4D7; /* สีพื้นหลังที่เปลี่ยนเมื่อคลิก */
+  color: white;
+  border: 2px solid #ff9800;
+  transform: translateY(0); /* ป้องกันการขยับขึ้น */
+  font-weight: bold;
+  height: 65px; /* เพิ่มความสูงของปุ่มที่ถูกเลือก */
+}
+
+.button-container::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 20px; /* เพิ่มความสูงให้กลืนกับพื้นหลัง */
+  background-color: #ffffff; /* สีพื้นหลังเดียวกับปุ่ม */
+  z-index: 5;
+}
+
+.button-container {
+  display: flex;
+  position: relative;
+  justify-content: center; /* จัดให้อยู่กึ่งกลาง */
+  gap: 5px; /* ระยะห่างระหว่างปุ่ม */
+}
+
+/* เมื่อคลิกที่ Plan Your Trip */
+#planTripButton.active {
+  z-index: 3;
+  transform: translateY(-10px); /* ขยับขึ้นเมื่อเลือก */
+  background-color: #A3C4D7; /* เปลี่ยนเป็นสีอ่อนเมื่อเลือก */
+}
+
+/* เมื่อคลิกที่ Place Detail */
+#placeDetailButton.active {
+  z-index: 3;
+  transform: translateY(-10px); /* ขยับขึ้นเมื่อเลือก */
+  background-color: #A3C4D7; /* เปลี่ยนเป็นสีอ่อนเมื่อเลือก */
+}
+
+.horizontal-box {
+  position: absolute;
+  width: 800px; /* ความกว้างของกล่อง */
+  height: 100px; /* ความสูงของกล่อง (แนวนอน) */
+  left: 15%; /* ขอบด้านซ้ายไม่ชิดมาก */
+  top: 29.5%; /* วางอยู่กลางหน้าจอในแนวตั้ง */
+  transform: translateY(-50%); /* ย้ายขึ้นลงเพื่อให้ตรงกลาง */
+  background: rgba(253, 244, 232, 0.5); /* สี FDF4E8 โปร่งแสง 50% */
+  border-radius: 10px; /* ขอบมน */
+  border: 2px solid #E6CAA5;
+  display: flex;
+  justify-content: center; /* จัดข้อความกลางแนวนอน */
+  align-items: center; /* จัดข้อความกลางแนวตั้ง */
+}
+.box-text {
+  font-family: 'Inter', sans-serif; /* ฟอนต์ */
+  font-size: 70px; /* ขนาดฟอนต์ */
+  color: #202B64; /* สีตัวหนังสือ */
+  font-weight: bold; /* ตัวหนา */
+}
+.rectangle {
+  position: absolute;
+  width: 350px;
+  /* ความกว้างของกล่อง */
+  height: 450px;
+  /* ความสูงของกล่อง (เพิ่มจากเดิมเพื่อให้พอสำหรับ dropdown ใหม่) */
+  right: 2%;
+  /* ชิดขอบขวา */
+  top: 55%;
+  /* วางอยู่กลางหน้าจอในแนวตั้ง */
+  transform: translateY(-50%);
+  /* ย้ายขึ้นลงเพื่อให้ตรงกลาง */
+  background: rgba(253, 244, 232, 0.9); 
+  border: 2px solid #E6CAA5;
+  /* ขอบกล่องสี #E6CAA5 */
+  border-radius: 10px;
+  /* มุมโค้ง */
+  display: flex;
+  flex-direction: column;
+  /* วางเนื้อหาในแนวตั้ง */
+  justify-content: flex-start;
+  align-items: center;
+  /* จัดกลางแนวนอน */
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  color: #202B64;
+  padding-top: 20px;
+  /* เพิ่มระยะห่างจากด้านบน */
+  font-weight: bold;
+  /* ทำข้อความตัวหนา */
+}
+
+.rectangle>div:first-child {
+  margin-bottom: 50px;
+  /* เพิ่มระยะห่างจากข้อความ "Plan Your Trip" */
+}
+
+.form-container {
+  width: 80%;
+  /* ความกว้างของฟอร์ม */
+  display: flex;
+  /* ใช้ flexbox เพื่อจัดวางในแนวนอน */
+  align-items: center;
+  /* จัดกลางในแนวตั้ง */
+  justify-content: space-between;
+  /* เว้นระยะห่างระหว่าง label และ select */
+  margin-top: 10px;
+  /* ระยะห่างจากข้อความ Plan Your Trip */
+}
+
+label {
+  font-size: 18px;
+  color: #202B64;
+  margin-right: 10px;
+  /* เว้นระยะห่างจาก dropdown */
+}
+
+select {
+  width: 48%;
+  /* กำหนดให้ dropdown ทั้งสองมีความกว้างเท่ากัน */
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #E6CAA5;
+  background-color: #fff;
+}
+
+.select-container {
+  width: 100%;
+  /* ความกว้างของฟอร์ม */
+  display: flex;
+  /* ใช้ flexbox เพื่อจัดวาง dropdown ให้อยู่ในบรรทัดเดียวกัน */
+  justify-content: space-between;
+  /* ให้ระยะห่างระหว่าง dropdown */
+  margin-top: 15px;
+  /* เว้นระยะห่างจาก dropdown จังหวัด */
+}
+
+.select-container .form-container {
+  width: 48%;
+  /* ปรับให้ dropdown ทั้งสองมีขนาดใกล้เคียงกัน */
+}
+
+.next-button-container {
+  margin-top: 195px; /* เพิ่มระยะห่างจากด้านบน (ปรับเพิ่มจากเดิม) */
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.next-button {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #202B64;
+  border: 2px solid #E6CAA5;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.next-button:hover {
+  background-color: #E6CAA5;
+}
+.button.plan-your-trip.active {
+  background-color: #ff9800; /* เปลี่ยนสีปุ่มเมื่อ active */
+  color: white;
+  border: 2px solid #ff9800;
+}

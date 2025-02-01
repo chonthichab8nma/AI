@@ -16,10 +16,12 @@ body {
 /* แบนเนอร์ */
 .banner {
   position: relative;
+  background: no-repeat center center;
   width: 100%;
   height: 120px;
   overflow: hidden;
-  padding: 10px 0;
+  padding: 10px 0; /*ตรงนี้ถ้าลบออกแบนเนอร์จะกลับมาปกติ*/
+  
 }
 
 .banner-image {

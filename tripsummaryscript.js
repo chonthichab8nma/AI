@@ -383,42 +383,50 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // ฟังก์ชันแสดงรายละเอียดทริป
-  const displayTripDetails = () => {
-    tripContent.innerHTML = ""; // ล้างเนื้อหาก่อน
-    if (tripDetails[province] && tripDetails[province][days]) {
-      tripDetails[province][days].forEach(dayDetail => {
-        const dayContainer = document.createElement("div");
-        dayContainer.classList.add("day");
+const displayTripDetails = () => {
+  // ล้างเนื้อหาก่อนเพื่อป้องกันข้อมูลซ้ำ
+  tripContent.innerHTML = "";
 
-        const dayTitle = document.createElement("h3");
-        dayTitle.textContent = dayDetail.day;
-        dayContainer.appendChild(dayTitle);
+  // ตรวจสอบข้อมูลว่ามีใน tripDetails หรือไม่
+  if (tripDetails[province] && tripDetails[province][days]) {
+    tripDetails[province][days].forEach(dayDetail => {
+      const dayContainer = document.createElement("div");
+      dayContainer.classList.add("day");
 
-        const eventList = document.createElement("ul");
-        dayDetail.events.forEach(event => {
-          const listItem = document.createElement("li");
-          listItem.textContent = event;
-          eventList.appendChild(listItem);
-        });
+      // เพิ่มหัวข้อวันที่
+      const dayTitle = document.createElement("h3");
+      dayTitle.textContent = dayDetail.day;
+      dayContainer.appendChild(dayTitle);
 
-        dayContainer.appendChild(eventList);
-        tripContent.appendChild(dayContainer);
+      // แสดงรายการกิจกรรม
+      const eventList = document.createElement("ul");
+      dayDetail.events.forEach(event => {
+        const listItem = document.createElement("li");
+        listItem.textContent = event;
+        eventList.appendChild(listItem);
       });
-    } else {
-      tripContent.textContent = "ไม่มีข้อมูลสำหรับจังหวัดหรือจำนวนวันที่เลือก";
-    }
-  };
 
-  // ตั้งค่าให้ปุ่มทำงาน
-  planTripButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.location.href = "Home.html"; // เปลี่ยนไปยังหน้า Home.html
-  });
+      dayContainer.appendChild(eventList);
+      tripContent.appendChild(dayContainer);
+    });
+  } else {
+    // กรณีไม่มีข้อมูลแสดงข้อความแจ้งเตือน
+    tripContent.innerHTML = "<p>ไม่มีข้อมูลสำหรับจังหวัดหรือจำนวนวันที่เลือก</p>";
+  }
+};
 
-  placeDetailButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.location.href = "plan_detail.html";
-  });
+// เรียกฟังก์ชันหลังโหลดข้อมูลจาก URL
+displayTripDetails();
+
+planTripButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location.assign("Home.html"); // ใช้ assign แทน href เพื่อให้เปลี่ยนหน้า
+});
+
+placeDetailButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location.assign("plan_details.html"); // ใช้ assign แทน href เพื่อให้เปลี่ยนหน้า
+});
 
   // ทำให้ปุ่ม active เมื่อเข้าหน้านี้
   planTripButton.classList.add("active");

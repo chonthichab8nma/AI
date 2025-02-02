@@ -6,7 +6,6 @@
 }
 
 body {
-    font-family: "Mali", sans-serif;
     background: url('background.jpg') no-repeat center top;
     /* ปรับตำแหน่งภาพพื้นหลังให้เลื่อนลง */
     background-size: cover;

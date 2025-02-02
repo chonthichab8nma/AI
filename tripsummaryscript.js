@@ -1,14 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
   const tripContent = document.getElementById("tripContent");
-  const planTripButton = document.getElementById("planTripButton");
-  const placeDetailButton = document.getElementById("placeDetailButton");
+  const planTripButton = document.getElementById("button1");
+  const placeDetailButton = document.getElementById("button2");
+  const tripDetailsSection = document.getElementById("tripDetails");
+  const banner = document.querySelector(".banner");
 
   // ดึงข้อมูลจาก URL (query parameters)
   const urlParams = new URLSearchParams(window.location.search);
-  const province = urlParams.get('province') || "จังหวัดไม่ระบุ";  // จังหวัด
-  const days = parseInt(urlParams.get('days')) || 0;               // จำนวนวัน
+  const province = urlParams.get('province');
+  const days = parseInt(urlParams.get('days'));
 
-  // แปลงชื่อจังหวัดจากอังกฤษเป็นไทย (เฉพาะที่ต้องการเปลี่ยน)
+  // ถ้าไม่มีข้อมูลจากหน้า Home.html ให้ redirect กลับไปยัง Home.html
+  if (!province || isNaN(days)) {
+    window.location.assign("./Home.html");
+    return; // หยุดการทำงานของโค้ดที่เหลือ
+  }
+
+  // แปลงชื่อจังหวัดจากอังกฤษเป็นไทย
   const provinceMapping = {
     "Phang Nga": "พังงา",
     "Phuket": "ภูเก็ต",
@@ -20,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // อัปเดตหัวข้อทริป
   const tripTitle = document.getElementById("tripTitle");
-  tripTitle.textContent = `${provinceThai} ${days} วัน`; //สวัสดีค่า....
+  tripTitle.textContent = `${provinceThai} ${days} วัน`;
 
   // ข้อมูลรายละเอียดทริป
   const tripDetails = {

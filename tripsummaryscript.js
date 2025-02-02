@@ -436,9 +436,6 @@ placeDetailButton.addEventListener("click", (e) => {
   window.location.assign("plan_details.html"); // ใช้ assign แทน href เพื่อให้เปลี่ยนหน้า
 });
 
-  // ทำให้ปุ่ม active เมื่อเข้าหน้านี้
-  planTripButton.classList.add("active");
-
   // ตั้งค่าให้เปลี่ยน active เมื่อคลิกปุ่มอื่น
   placeDetailButton.addEventListener("click", () => {
     planTripButton.classList.remove("active");

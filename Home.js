@@ -22,6 +22,6 @@ function changeStyle(buttonNumber) {
     } else if (buttonNumber === 2) {
         document.getElementById('button2').classList.add('active');
         // เมื่อกดปุ่มที่ 2 ให้ไปที่หน้า plan_detail.html
-        //window.location.href = 'plan_detail.html';
+        window.location.href = 'plan_details.html';
     }
 }

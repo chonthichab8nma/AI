@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Details</title>
+    <link rel="stylesheet" href="plan_details.css">
+
+</head>
+
+<body>
+
+    <!-- ส่วนของแบนเนอร์ -->
+    <div class="banner">
+        <img src="banner_plan_detail.jpg" alt="Banner" class="banner-image">
+        <div class="button-container">
+            <button id="button1" class="button" onclick="changeStyle(1)">Plan Your Trip</button>
+            <button id="button2" class="button active" onclick="changeStyle(2)">Place Details</button>
+          </div>
+    </div>
+
+    <!-- Dropdown เลือกจังหวัด -->
+    <div class="dropdown">
+        <label for="province" class="dropdown-label">จังหวัด:</label>
+        <select id="province" class="dropdown-select">
+            <option value hidden="">ระบุจังหวัด</option>
+            <option value="krabi">กระบี่</option>
+            <option value="nakhonsithammarat">นครศรีธรรมราช</option>
+            <option value="phangnga">พังงา</option>
+            <option value="phuket">ภูเก็ต</option>
+            <option value="suratthani">สุราษฎร์ธานี</option>
+        </select>
+    </div>
+
+    <!-- โซนแสดงข้อมูลสถานที่ท่องเที่ยว -->
+    <div id="place-container"></div>
+
+    <script src="plan_details.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+body {
+    font-family: sans-serif;
+    background-image: url('background.jpg');
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.header {
+    background: url('/mnt/data/image.png') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+.main-content {
+    margin-top: 100px; /* ให้เนื้อหาไม่ถูกแบนเนอร์ทับ */
+    min-height: 100vh;
+    background-image: url('background.jpg'); /* เปลี่ยนเป็น URL ของรูปภาพพื้นหลัง */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* ทำให้พื้นหลังไม่เลื่อน */
+    padding: 20px;
+    text-align: center;
+    color: white; /* เปลี่ยนสีตัวอักษรให้มองเห็นง่าย */
+}
+
+.image-container {
+    text-align: center;
+}
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.info {
+    text-align: left;
+    margin-top: 15px;
+    font-size: 18px;
+    color: #333;
+}
+.banner {
+    width: 100%;
+    height: 100px; /* ปรับความสูงได้ */
+    background-image: url('Banner.jpg'); /* เปลี่ยนเป็น URL ของรูปภาพแบนเนอร์ */
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}

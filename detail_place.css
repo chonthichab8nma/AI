@@ -170,14 +170,14 @@ button:active {
     margin: 18px auto; /* จัดให้อยู่กึ่งกลางและเพิ่มระยะขอบ */
     background-color: #fff7dc;
     border-radius: 15px;
-    padding: 60px;
+    padding: 20px;
     padding-left: 20px; /* ลด padding ซ้าย */
     padding-right: 20px; /* ลด padding ขวา */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
     z-index: 10;
     text-align: left; /* จัดข้อความชิดซ้าย */
-    margin-bottom: 15px; /* ปรับค่าตามต้องการ */
+    margin-bottom: 20px; /* ปรับค่าตามต้องการ */
 
     
 }

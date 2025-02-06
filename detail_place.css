@@ -196,3 +196,22 @@ p, ul {
     margin-top: 15px; /* ป้องกันไม่ให้เนื้อหาชิดกับหัวข้อใหญ่ถัดไป */
     margin-bottom: 30px; /* เว้นระยะก่อนหัวข้อถัดไป */
 }
+
+.navigation-buttons {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+.nav-btn {
+    background-color: #76b0c7;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.nav-btn:hover {
+    background-color: #76b0c7;
+}

@@ -326,7 +326,7 @@ function displayPlaces(province) {
             readMoreButton.classList.add("read-more-btn");
             readMoreButton.textContent = "อ่านเพิ่มเติม";  // ข้อความปุ่ม
             readMoreButton.onclick = function () {
-                window.location.href = `details.html?place=${encodeURIComponent(place.name)}`;
+                window.location.href = `detail_place.html?place=${encodeURIComponent(place.name)}`;
             };
 
             // สร้างส่วนของรูปภาพ

@@ -20,7 +20,7 @@ function changeStyle(buttonNumber) {
     } else if (buttonNumber === 2) {
         document.getElementById('button2').classList.add('active');
         // เมื่อกดปุ่มที่ 2 ให้ไปที่หน้า plan_detail.html
-        window.location.href = 'plan_detail.html';
+        window.location.href = 'plan_details.html';
     }
 }
 
@@ -121,7 +121,7 @@ const placesData = {
         },
         {
             name: "สวนตาสรรค์",
-            description: "สวนสวยๆ ที่เหมาะสำหรับการพักผ่อน เป็นสวนสาธารณะที่เต็มไปด้วยธรรมชาติและความร่มรื่น เหมาะสำหรับผู้ที่ต้องการผ่อนคลายและพักผ่อนในบรรยากาศที่เงียบสงบ โดยมีต้นไม้ใหญ่ สวนดอกไม้ และพื้นที่ให้เดินเล่นในสภาพแวดล้อมที่สดชื่น",
+            description: "สวนสวย ๆ ที่เหมาะสำหรับการพักผ่อน เป็นสวนสาธารณะที่เต็มไปด้วยธรรมชาติและความร่มรื่น เหมาะสำหรับผู้ที่ต้องการผ่อนคลายและพักผ่อนในบรรยากาศที่เงียบสงบ โดยมีต้นไม้ใหญ่ สวนดอกไม้ และพื้นที่ให้เดินเล่นในสภาพแวดล้อมที่สดชื่น",
             image: "suan_ta_san.jpg"
         },
         {
@@ -152,7 +152,7 @@ const placesData = {
             image: "khao_lak.jpg"
         },
         {
-            name: "วัดสวรรค์คูหา",
+            name: "วัดสุวรรณคูหา",
             description: "วัดที่มีความสวยงามทางสถาปัตยกรรม ตั้งอยู่ในถ้ำเป็นวัดที่มีความงดงามทั้งในด้านสถาปัตยกรรมและ ประวัติศาสตร์ ภายในวัดตั้งอยู่ในถ้ำซึ่งให้ความรู้สึกสงบและเงียบสงบ เหมาะสำหรับผู้ที่ต้องการแสวงบุญและศึกษาความเป็นมาของสถานที่ทางศาสนา นอกจากนี้ยังมีภาพเขียนและสิ่งของโบราณที่น่าสนใจมากมาย",
             image: "wat_suwankuha.jpg"
         },
@@ -359,10 +359,31 @@ function toggleDescription(descriptionElement, buttonElement) {
     }
 }
 
-// Event Listener เมื่อมีการเปลี่ยนค่าใน dropdown
+// เมื่อเปลี่ยนค่าใน dropdown
 provinceSelect.addEventListener("change", function () {
     const selectedProvince = provinceSelect.value;
-    displayPlaces(selectedProvince);
+    sessionStorage.setItem("selectedProvince", selectedProvince); // เก็บค่าจังหวัด
+    displayPlaces(selectedProvince);  // แสดงสถานที่ตามจังหวัดที่เลือก
 });
 
+// ตรวจสอบค่าที่เก็บไว้เมื่อโหลดหน้า
+document.addEventListener("DOMContentLoaded", function () {
+    const savedProvince = sessionStorage.getItem("selectedProvince");
+    if (savedProvince) {
+        provinceSelect.value = savedProvince; // ตั้งค่า dropdown ตามค่าที่เก็บไว้
+        displayPlaces(savedProvince); // แสดงสถานที่ตามจังหวัดที่เลือก
+    }
+});
+
+// ตรวจสอบว่าเป็นการรีเฟรชหน้าหรือไม่
+window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+        // ถ้าเป็นการกลับมาจากการกดย้อนกลับ (Back Forward Cache)
+        console.log("กลับจากการกดย้อนกลับ: ข้อมูลยังอยู่");
+    } else if (performance.navigation.type === 1) {
+        // ถ้าเป็นการรีเฟรชหน้า (Reload)
+        sessionStorage.removeItem("selectedProvince");
+        console.log("รีเฟรชหน้า: ล้างค่าจังหวัดที่เลือก");
+    }
+});
 

@@ -1,4 +1,4 @@
-/* รีเซ็ตค่าเริ่มต้นของ HTML */
+/* รีเซ็ตค่าเริ่มต้น */
 * {
     margin: 0;
     padding: 0;
@@ -15,18 +15,14 @@ body {
     color: #333;
 }
 
-/* แบนเนอร์ด้านบน */
+/* แบนเนอร์ */
 .banner {
+    position: relative;
     width: 100%;
-    height: 120px; /* ปรับความสูงได้ */
-    background-image: url('banner_plan_detail.jpg'); /* เปลี่ยนเป็น URL ของรูปภาพแบนเนอร์ */
-    background-size: cover;
-    background-position: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    height: 120px;
+    overflow: hidden;
+    background: #000;
+    /* กำหนดพื้นหลังสีดำให้แบนเนอร์ */
 }
 
 .banner-image {
@@ -35,8 +31,6 @@ body {
     object-fit: cover;
     object-position: center;
 }
-
-/*ปุ่ม*/
 
 .button-container {
     position: absolute;
@@ -150,68 +144,157 @@ button:active {
     /* เปลี่ยนเป็นสีอ่อนเมื่อเลือก */
 }
 
-
-/* เนื้อหาหลักที่อยู่ใต้แบนเนอร์ */
-.main-content {
-    margin-top: 100px; /* ปรับตามความสูงของ .banner */
-    min-height: calc(100vh - 100px); /* ป้องกันไม่ให้มีช่องว่างด้านล่าง */
-    width: 100%; /* ให้ความกว้างเต็มหน้าจอ */
-    background-image: url('background.jpg'); 
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    color: black;
-    overflow-x: hidden; /* ป้องกันการเลื่อนในแนวนอน */
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
-.card {
-    width: 80%;
-    margin: 18px auto; /* จัดให้อยู่กึ่งกลางและเพิ่มระยะขอบ */
-    background-color: #fff7dc;
-    border-radius: 15px;
-    padding: 20px;
-    padding-left: 20px; /* ลด padding ซ้าย */
-    padding-right: 20px; /* ลด padding ขวา */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    z-index: 10;
-    text-align: left; /* จัดข้อความชิดซ้าย */
-    margin-bottom: 20px; /* ปรับค่าตามต้องการ */
+h2 {
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
 
-    
+h3 {
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: left;
 }
-.image {
-    display: block; /* ทำให้รูปภาพเป็น block-level */
-    margin: 0 auto; /* จัดรูปภาพให้อยู่ตรงกลาง */
-    max-width: 100%; /* ป้องกันไม่ให้รูปภาพเกินความกว้างหน้าจอ */
-    height: auto; /* รักษาอัตราส่วนของรูป */
-    text-align: center; /* จัดข้อความชิดซ้าย */
-    
-}
-h1, h2, h3 {
-    margin-bottom: 30px; /* ปรับค่าตามต้องการ */
-}
-p, ul {
+
+p {
     margin-top: 15px; /* ป้องกันไม่ให้เนื้อหาชิดกับหัวข้อใหญ่ถัดไป */
     margin-bottom: 30px; /* เว้นระยะก่อนหัวข้อถัดไป */
 }
 
-.navigation-buttons {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    display: flex;
-    gap: 5px;
+/* การ์ดแสดงรายละเอียดสถานที่ */
+.card {
+    background-color: #faf3ce;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    position: relative;
 }
-.nav-btn {
-    background-color: #76b0c7;
+
+/* รูปภาพสถานที่ */
+#place-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px auto;
+    display: block;
+}
+
+/* ชื่อสถานที่ */
+#place-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* คำอธิบายสถานที่ */
+#place-description {
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+/* หัวข้อจุดเด่น */
+#place-highlights-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* รายการจุดเด่น */
+#place-highlights {
+    list-style-type: "⭐ ";
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+/* หัวข้อกิจกรรมที่แนะนำ */
+#place-activities-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* รายการกิจกรรมที่แนะนำ */
+#place-activities {
+    list-style-type: "✔ ";
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+/* หัวข้อข้อมูลเพิ่มเติม */
+#place-additional-info-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    margin-top: 20px;
+}
+
+/* ข้อมูลเพิ่มเติม */
+#place-additional-info {
+    list-style-type: "●  ";
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+/* ปรับลิสต์ให้มีลักษณะเหมือนกับจุดเด่นและกิจกรรม */
+#place-additional-info li {
+    margin-bottom: 8px;
+    padding-left: 0 ;
+}
+
+#place-additional-info-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* สไตล์สำหรับลิสต์ */
+ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* สไตล์สำหรับปุ่มลูกศร */
+.arrow-buttons {
+    position: absolute;
+    bottom: 20px;  /* จัดตำแหน่งให้ปุ่มอยู่ข้างล่าง */
+    right: 20px;   /* จัดตำแหน่งให้ปุ่มอยู่ด้านขวา */
+    display: flex;
+    gap: 10px;
+}
+
+.arrow-button {
+    background-color: #79AFC7;
     color: white;
     border: none;
     padding: 10px;
+    border-radius: 50%;
+    font-size: 18px;
     cursor: pointer;
-    border-radius: 5px;
+    transition: background-color 0.3s;
 }
-.nav-btn:hover {
-    background-color: #76b0c7;
+
+.arrow-button:hover {
+    background-color: #4f7d90;
 }

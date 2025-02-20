@@ -533,5 +533,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // เริ่มต้นแสดงเนื้อหาทริปเมื่อหน้าโหลด
-  displayTripDetails();
+  displayTripDetails(); //pv,crhpbj'cdhpbj'g]t 
 });

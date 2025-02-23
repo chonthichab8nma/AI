@@ -298,3 +298,34 @@ li {
 .arrow-button:hover {
     background-color: #4f7d90;
 }
+
+/* //backbotton */
+
+.back-button {
+    position: absolute;
+    left: 15px; /* ตรึงปุ่มไว้ที่ซ้าย */
+    bottom: 10px; /* ปรับให้อยู่ระดับเดียวกับปุ่มขวา */
+    background-color: #79AFC7;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* ทำให้ลื่นไหล */
+}
+
+.back-button:hover {
+    background-color: #5F95B2; /* เปลี่ยนเป็นสีฟ้าเข้มขึ้นเมื่อวางเมาส์ */
+    transform: scale(1.05); /* ทำให้ปุ่มขยายขึ้นเล็กน้อย */
+}
+
+.button-container {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2; /* ให้ปุ่ม Plan Your Trip และ Place Details อยู่บนรูป */
+}
+
+/* ตัวใหม่ */
+
